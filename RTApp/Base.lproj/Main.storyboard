@@ -242,7 +242,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0we-WF-cEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="1856"/>
+            <point key="canvasLocation" x="634" y="1882"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="sYe-Wr-zdR">
+            <objects>
+                <viewController id="2us-hd-jYy" customClass="userDetailVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6w4-Rl-maO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y4D-90-TjL">
+                                <rect key="frame" x="129" y="510" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Message">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="MessageButton_click:" destination="2us-hd-jYy" eventType="touchUpInside" id="kYy-yq-TKK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6A-pN-mPk">
+                                <rect key="frame" x="129" y="180" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uKw-fP-QI0">
+                                <rect key="frame" x="37" y="77" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HhZ-eH-A9c">
+                                <rect key="frame" x="189" y="110" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="Vey-MU-jbw"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="y6A-pN-mPk" id="AVJ-rJ-9ba"/>
+                        <outlet property="messageButton" destination="Y4D-90-TjL" id="81z-4B-syH"/>
+                        <outlet property="profileImage" destination="uKw-fP-QI0" id="8qW-ut-4Uk"/>
+                        <outlet property="usernameLabel" destination="HhZ-eH-A9c" id="QMU-cw-ppG"/>
+                        <segue destination="QZ6-uN-mw8" kind="push" identifier="goToConversationVC" id="8nB-8S-PTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCk-jr-kQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059" y="1173"/>
         </scene>
         <!--Users-->
         <scene sceneID="9SB-p8-Paz">
@@ -312,12 +364,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="resultsTable" destination="WA9-2o-7zw" id="EAI-Ss-RUt"/>
-                        <segue destination="QZ6-uN-mw8" kind="push" identifier="goToConversationVC" id="eoi-EB-ztc"/>
+                        <segue destination="2us-hd-jYy" kind="push" identifier="goToUserDetailVC" id="Jim-uu-fB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckw-LX-8s1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="1135"/>
+            <point key="canvasLocation" x="634" y="1173"/>
         </scene>
         <!--ConversationVC-->
         <scene sceneID="IFE-wL-Kyz">
@@ -380,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEc-Tm-WPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="1135"/>
+            <point key="canvasLocation" x="1045" y="1876"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WuO-2h-oZo">
@@ -410,7 +462,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pmT-3H-5Mf"/>
-        <segue reference="eoi-EB-ztc"/>
+        <segue reference="FlI-95-DQn"/>
+        <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>
 </document>

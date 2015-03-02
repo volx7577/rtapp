@@ -17,6 +17,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var resultsUsernameArray = [String]()
     var resultsProfileNameArray = [String]()
     var resultsImageFiles = [PFFile]()
+    var resultsBioArrays = [String]()
 
 
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             resultsUsernameArray.removeAll(keepCapacity: false)
             resultsProfileNameArray.removeAll(keepCapacity: false)
             resultsImageFiles.removeAll(keepCapacity: false)
+            resultsBioArrays.removeAll(keepCapacity: false)
             self.resultsTable.reloadData()
         }
 
@@ -54,6 +56,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.resultsUsernameArray.append(object.username)
             self.resultsProfileNameArray.append(object.email)
             self.resultsImageFiles.append(object["photo"] as PFFile)
+            self.resultsBioArrays.append(object["bio"] as String)
 
             self.resultsTable.reloadData()
         }
@@ -64,7 +67,20 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         otherName = cell.usernameLabel.text!
         otherProfileName = cell.profileNameLabel.text!
-        self.performSegueWithIdentifier("goToConversationVC", sender: self)
+        bio = cell.bio
+        profileImagew = cell.profileImage.image
+
+        self.performSegueWithIdentifier("goToUserDetailVC", sender: self)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "goToUserDetailVC") {
+
+            var datas = segue.destinationViewController as userDetailVC
+            datas.dataPassedName = otherName
+            datas.dataPassedBio = bio
+
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -85,6 +101,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         cell.usernameLabel.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLabel.text = self.resultsProfileNameArray[indexPath.row]
+        cell.bio = self.resultsBioArrays[indexPath.row]
 
         resultsImageFiles[indexPath.row].getDataInBackgroundWithBlock({
             (imageData: NSData!, error:NSError!) -> Void in

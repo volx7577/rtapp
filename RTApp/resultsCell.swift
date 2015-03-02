@@ -14,6 +14,8 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
 
+    var bio:String = ""
+
     override func awakeFromNib() {
         super.awakeFromNib()
 

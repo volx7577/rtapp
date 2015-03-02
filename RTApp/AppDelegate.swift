@@ -15,8 +15,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+
+        Parse.setApplicationId("2KOSL0swySScfFGDMAImQz6R3LNBdvhe6gotb705", clientKey: "7K1zv2nAs3Wvwvf1Jcufd3hElaRw7oQxPwtOc6qy")
+
+        let notificationTypes:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+
         return true
+    }
+
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let currentInstallation:PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackgroundWithBlock{
+            (success: Bool!, error: NSError!) -> Void in
+            if error == nil{
+                println("saved current installation")
+            }else{
+                println("idk dawg, some shit went down.")
+            }
+        }
+
+    }
+
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error.localizedDescription)
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NSNotificationCenter.defaultCenter().postNotificationName("getMessage", object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

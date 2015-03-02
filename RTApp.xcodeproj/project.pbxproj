@@ -8,11 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */; };
-		5F7707571AA0CD4B0018AEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707561AA0CD4B0018AEBB /* ViewController.swift */; };
+		5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707561AA0CD4B0018AEBB /* loginVC.swift */; };
 		5F77075A1AA0CD4B0018AEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7707581AA0CD4B0018AEBB /* Main.storyboard */; };
 		5F77075C1AA0CD4B0018AEBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F77075B1AA0CD4B0018AEBB /* Images.xcassets */; };
 		5F77075F1AA0CD4B0018AEBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */; };
 		5F77076B1AA0CD4B0018AEBB /* RTAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77076A1AA0CD4B0018AEBB /* RTAppTests.swift */; };
+		5F7707751AA0CE920018AEBB /* signupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707741AA0CE920018AEBB /* signupVC.swift */; };
+		5F7707771AA0CF3A0018AEBB /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7707761AA0CF3A0018AEBB /* 3.png */; };
+		5F77077A1AA0D7BE0018AEBB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707781AA0D7BE0018AEBB /* Bolts.framework */; };
+		5F77077B1AA0D7BE0018AEBB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707791AA0D7BE0018AEBB /* Parse.framework */; };
+		5F77077D1AA0D7D60018AEBB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F77077C1AA0D7D60018AEBB /* AudioToolbox.framework */; };
+		5F77077F1AA0D7DC0018AEBB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F77077E1AA0D7DC0018AEBB /* CFNetwork.framework */; };
+		5F7707811AA0D7E10018AEBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707801AA0D7E10018AEBB /* CoreGraphics.framework */; };
+		5F7707831AA0D7E60018AEBB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707821AA0D7E60018AEBB /* CoreLocation.framework */; };
+		5F7707851AA0D7EB0018AEBB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707841AA0D7EB0018AEBB /* MobileCoreServices.framework */; };
+		5F7707871AA0D7F00018AEBB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707861AA0D7F00018AEBB /* QuartzCore.framework */; };
+		5F7707891AA0D7F40018AEBB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707881AA0D7F40018AEBB /* Security.framework */; };
+		5F77078B1AA0D7F90018AEBB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F77078A1AA0D7F90018AEBB /* StoreKit.framework */; };
+		5F77078D1AA0D7FE0018AEBB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F77078C1AA0D7FE0018AEBB /* SystemConfiguration.framework */; };
+		5F77078F1AA0D8030018AEBB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F77078E1AA0D8030018AEBB /* libz.dylib */; };
+		5F7707911AA0D8090018AEBB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7707901AA0D8090018AEBB /* libsqlite3.dylib */; };
+		5F7707951AA0D82A0018AEBB /* RTAppHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707941AA0D82A0018AEBB /* RTAppHeader.m */; };
+		5F7707991AA0DF6D0018AEBB /* userVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707981AA0DF6D0018AEBB /* userVC.swift */; };
+		5F77079B1AA0E0250018AEBB /* resultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77079A1AA0E0250018AEBB /* resultsCell.swift */; };
+		5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77079C1AA0F4C80018AEBB /* conversationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +48,33 @@
 		5F77074F1AA0CD4B0018AEBB /* RTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7707531AA0CD4B0018AEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F7707561AA0CD4B0018AEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F7707561AA0CD4B0018AEBB /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
 		5F7707591AA0CD4B0018AEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F77075B1AA0CD4B0018AEBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F77075E1AA0CD4B0018AEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5F7707641AA0CD4B0018AEBB /* RTAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7707691AA0CD4B0018AEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F77076A1AA0CD4B0018AEBB /* RTAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTAppTests.swift; sourceTree = "<group>"; };
+		5F7707741AA0CE920018AEBB /* signupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupVC.swift; sourceTree = "<group>"; };
+		5F7707761AA0CF3A0018AEBB /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../../../Pictures/3.png; sourceTree = "<group>"; };
+		5F7707781AA0D7BE0018AEBB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1.6.3/Bolts.framework"; sourceTree = "<group>"; };
+		5F7707791AA0D7BE0018AEBB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1.6.3/Parse.framework"; sourceTree = "<group>"; };
+		5F77077C1AA0D7D60018AEBB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5F77077E1AA0D7DC0018AEBB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5F7707801AA0D7E10018AEBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5F7707821AA0D7E60018AEBB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5F7707841AA0D7EB0018AEBB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5F7707861AA0D7F00018AEBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F7707881AA0D7F40018AEBB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5F77078A1AA0D7F90018AEBB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5F77078C1AA0D7FE0018AEBB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F77078E1AA0D8030018AEBB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5F7707901AA0D8090018AEBB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5F7707931AA0D8290018AEBB /* RTApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		5F7707941AA0D82A0018AEBB /* RTAppHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTAppHeader.m; sourceTree = SOURCE_ROOT; };
+		5F7707981AA0DF6D0018AEBB /* userVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userVC.swift; sourceTree = "<group>"; };
+		5F77079A1AA0E0250018AEBB /* resultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultsCell.swift; sourceTree = "<group>"; };
+		5F77079C1AA0F4C80018AEBB /* conversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conversationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +82,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7707911AA0D8090018AEBB /* libsqlite3.dylib in Frameworks */,
+				5F77078F1AA0D8030018AEBB /* libz.dylib in Frameworks */,
+				5F77078D1AA0D7FE0018AEBB /* SystemConfiguration.framework in Frameworks */,
+				5F77078B1AA0D7F90018AEBB /* StoreKit.framework in Frameworks */,
+				5F7707891AA0D7F40018AEBB /* Security.framework in Frameworks */,
+				5F7707871AA0D7F00018AEBB /* QuartzCore.framework in Frameworks */,
+				5F7707851AA0D7EB0018AEBB /* MobileCoreServices.framework in Frameworks */,
+				5F7707831AA0D7E60018AEBB /* CoreLocation.framework in Frameworks */,
+				5F7707811AA0D7E10018AEBB /* CoreGraphics.framework in Frameworks */,
+				5F77077F1AA0D7DC0018AEBB /* CFNetwork.framework in Frameworks */,
+				5F77077D1AA0D7D60018AEBB /* AudioToolbox.framework in Frameworks */,
+				5F77077B1AA0D7BE0018AEBB /* Parse.framework in Frameworks */,
+				5F77077A1AA0D7BE0018AEBB /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +111,7 @@
 		5F7707461AA0CD4B0018AEBB = {
 			isa = PBXGroup;
 			children = (
+				5F7707921AA0D80E0018AEBB /* Frameworks */,
 				5F7707511AA0CD4B0018AEBB /* RTApp */,
 				5F7707671AA0CD4B0018AEBB /* RTAppTests */,
 				5F7707501AA0CD4B0018AEBB /* Products */,
@@ -78,7 +131,13 @@
 			isa = PBXGroup;
 			children = (
 				5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */,
-				5F7707561AA0CD4B0018AEBB /* ViewController.swift */,
+				5F7707941AA0D82A0018AEBB /* RTAppHeader.m */,
+				5F7707931AA0D8290018AEBB /* RTApp-Bridging-Header.h */,
+				5F7707561AA0CD4B0018AEBB /* loginVC.swift */,
+				5F77079C1AA0F4C80018AEBB /* conversationVC.swift */,
+				5F7707741AA0CE920018AEBB /* signupVC.swift */,
+				5F7707981AA0DF6D0018AEBB /* userVC.swift */,
+				5F77079A1AA0E0250018AEBB /* resultsCell.swift */,
 				5F7707581AA0CD4B0018AEBB /* Main.storyboard */,
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
 				5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */,
@@ -90,6 +149,7 @@
 		5F7707521AA0CD4B0018AEBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F7707761AA0CF3A0018AEBB /* 3.png */,
 				5F7707531AA0CD4B0018AEBB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +170,26 @@
 				5F7707691AA0CD4B0018AEBB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F7707921AA0D80E0018AEBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7707901AA0D8090018AEBB /* libsqlite3.dylib */,
+				5F77078E1AA0D8030018AEBB /* libz.dylib */,
+				5F77078C1AA0D7FE0018AEBB /* SystemConfiguration.framework */,
+				5F77078A1AA0D7F90018AEBB /* StoreKit.framework */,
+				5F7707881AA0D7F40018AEBB /* Security.framework */,
+				5F7707861AA0D7F00018AEBB /* QuartzCore.framework */,
+				5F7707841AA0D7EB0018AEBB /* MobileCoreServices.framework */,
+				5F7707821AA0D7E60018AEBB /* CoreLocation.framework */,
+				5F7707801AA0D7E10018AEBB /* CoreGraphics.framework */,
+				5F77077E1AA0D7DC0018AEBB /* CFNetwork.framework */,
+				5F77077C1AA0D7D60018AEBB /* AudioToolbox.framework */,
+				5F7707781AA0D7BE0018AEBB /* Bolts.framework */,
+				5F7707791AA0D7BE0018AEBB /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +241,11 @@
 				TargetAttributes = {
 					5F77074E1AA0CD4B0018AEBB = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = L5TX56VNVF;
 					};
 					5F7707631AA0CD4B0018AEBB = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = L5TX56VNVF;
 						TestTargetID = 5F77074E1AA0CD4B0018AEBB;
 					};
 				};
@@ -195,6 +277,7 @@
 				5F77075A1AA0CD4B0018AEBB /* Main.storyboard in Resources */,
 				5F77075F1AA0CD4B0018AEBB /* LaunchScreen.xib in Resources */,
 				5F77075C1AA0CD4B0018AEBB /* Images.xcassets in Resources */,
+				5F7707771AA0CF3A0018AEBB /* 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7707571AA0CD4B0018AEBB /* ViewController.swift in Sources */,
+				5F77079B1AA0E0250018AEBB /* resultsCell.swift in Sources */,
+				5F7707951AA0D82A0018AEBB /* RTAppHeader.m in Sources */,
+				5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */,
+				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
+				5F7707991AA0DF6D0018AEBB /* userVC.swift in Sources */,
 				5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */,
+				5F7707751AA0CE920018AEBB /* signupVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +360,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -292,6 +381,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "099289be-6dbd-4a9a-9a87-39cd46c8e962";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -314,6 +404,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -327,6 +418,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "099289be-6dbd-4a9a-9a87-39cd46c8e962";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -336,9 +428,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bbarclay/Downloads/parse-library-1.6.3",
+				);
 				INFOPLIST_FILE = RTApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RTApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +448,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bbarclay/Downloads/parse-library-1.6.3",
+				);
 				INFOPLIST_FILE = RTApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RTApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -356,6 +467,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -367,6 +480,7 @@
 				INFOPLIST_FILE = RTAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTApp.app/RTApp";
 			};
 			name = Debug;
@@ -375,6 +489,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -382,6 +498,7 @@
 				INFOPLIST_FILE = RTAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RTApp.app/RTApp";
 			};
 			name = Release;
@@ -405,6 +522,7 @@
 				5F7707701AA0CD4B0018AEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F7707711AA0CD4B0018AEBB /* Build configuration list for PBXNativeTarget "RTAppTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +531,7 @@
 				5F7707731AA0CD4B0018AEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

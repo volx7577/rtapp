@@ -164,7 +164,7 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as messageCell
 
         otherName = cell.usernameLabel.text!

@@ -51,7 +51,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         frameMessageView.frame = CGRectMake(0, resultsScrollView.frame.maxY, width, 50)
         lineLabel.frame = CGRectMake(0, 1, width, 1)
         messageTextView.frame = CGRectMake(2, 1, self.frameMessageView.frame.size.width-52, 48)
-        sendButton.center = CGPointMake(frameMessageView.frame.size.width-30, 24)
+        sendButton.center = CGPointMake(frameMessageView.frame.size.width-25, 24)
 
         scrollViewOriginalY = self.resultsScrollView.frame.origin.y
         frameMessageOriginalY = self.frameMessageView.frame.origin.y

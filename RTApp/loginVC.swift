@@ -31,6 +31,33 @@ class loginVC: UIViewController {
         signupButton.center = CGPointMake(width/2, height-30)
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        let width = view.frame.size.width
+        let height = view.frame.size.height
+
+        if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
+            if(textField == self.passwordField || textField == self.usernameField){
+                UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+                    self.view.center = CGPointMake(width/2, (height/2))
+                    }, completion: {
+                        (finished:Bool) in
+                        //
+                })
+            }
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

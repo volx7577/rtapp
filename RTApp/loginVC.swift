@@ -80,7 +80,7 @@ class loginVC: UIViewController {
                     }
                 }
 
-                self.performSegueWithIdentifier("goToUserVC", sender: self)
+                self.performSegueWithIdentifier("goToHomeVC", sender: self)
             }else{
                 println("error login")
             }

@@ -17,6 +17,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var bioField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var deptField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         emailField.frame = CGRectMake(16, 300, width-32, 30)
         passwordField.frame = CGRectMake(16, 340, width-32, 30)
         bioField.frame = CGRectMake(16, 380, width-32, 30)
+        deptField.frame = CGRectMake(16, 420, width-32, 30)
         signupButton.center = CGPointMake(width/2, height-30)
     }
 
@@ -56,6 +58,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         passwordField.resignFirstResponder()
         emailField.resignFirstResponder()
         bioField.resignFirstResponder()
+        deptField.resignFirstResponder()
         return true
     }
 
@@ -69,7 +72,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
-            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField){
+            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField){
                 UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
                     self.view.center = CGPointMake(width/2, (height/2)-130)
                     }, completion: {
@@ -85,7 +88,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
-            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField){
+            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField){
                 UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
                     self.view.center = CGPointMake(width/2, (height/2))
                     }, completion: {
@@ -102,6 +105,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         user.password = passwordField.text
         user.email = emailField.text
         user["bio"] = bioField.text
+        user["dept"] = deptField.text
         let imageData = UIImagePNGRepresentation(self.profileImage.image)
         let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
         user["photo"] = imageFile
@@ -122,7 +126,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
                     }
                 }
 
-                self.performSegueWithIdentifier("goToUserVC2", sender: self)
+                self.performSegueWithIdentifier("goToHomeVC2", sender: self)
                 println("signup")
             }else{
                 println("can't signup")

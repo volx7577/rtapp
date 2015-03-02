@@ -19,6 +19,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var resultsImageFiles = [PFFile]()
     var resultsBioArrays = [String]()
 
+    var deptWasSelected = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +48,11 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.resultsTable.reloadData()
         }
 
+        var predicate = NSPredicate(format: "username != '"+userName+"'")
+        if (deptWasSelected != ""){
+            predicate = NSPredicate(format: "username != %@ AND dept = %@", userName, deptWasSelected)
+        }
 
-        let predicate = NSPredicate(format: "username != '"+userName+"'")
         var query = PFQuery(className: "_User", predicate: predicate)
         var objects = query.findObjects()
 
@@ -83,10 +87,6 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
-        self.navigationItem.hidesBackButton = true
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultsUsernameArray.count
     }
@@ -115,8 +115,5 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    @IBAction func logoutButton_click(sender: AnyObject) {
-        PFUser.logOut()
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
+    
 }

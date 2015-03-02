@@ -74,7 +74,7 @@
                         <outlet property="subtitleLabel" destination="m42-SK-Och" id="rQe-Af-2zL"/>
                         <outlet property="usernameField" destination="OC5-nQ-bVk" id="1Se-aQ-lhm"/>
                         <outlet property="welcomeLabel" destination="WyM-cP-xiK" id="iAR-Xz-7Pa"/>
-                        <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC" id="FlI-95-DQn"/>
+                        <segue destination="BEM-qd-uRU" kind="push" identifier="goToHomeVC" id="Uit-18-39r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyi-m2-5Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,6 +153,15 @@
                                     <outlet property="delegate" destination="3tc-j2-a7s" id="JZm-ab-RqI"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dept." minimumFontSize="17" id="y7u-eW-cgv">
+                                <rect key="frame" x="56" y="426" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3tc-j2-a7s" id="rvU-Rz-KNF"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.34092493832971826" blue="0.42956438084277859" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -160,17 +169,344 @@
                     <connections>
                         <outlet property="bioField" destination="00G-Mh-Rlc" id="j8W-Gv-9V5"/>
                         <outlet property="changeProfButton" destination="mLv-66-noV" id="z8l-0Q-Oa4"/>
+                        <outlet property="deptField" destination="y7u-eW-cgv" id="XrW-7N-tae"/>
                         <outlet property="emailField" destination="JwA-ub-eVN" id="f8k-V0-NEl"/>
                         <outlet property="passwordField" destination="90w-Dt-cqz" id="mAW-gc-rpo"/>
                         <outlet property="profileImage" destination="oDF-Ue-PyY" id="LrV-mR-umU"/>
                         <outlet property="signupButton" destination="syR-vs-xnJ" id="gwS-Lf-PFY"/>
                         <outlet property="usernameField" destination="EhQ-T2-LMn" id="shD-kr-d9r"/>
-                        <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC2" id="pmT-3H-5Mf"/>
+                        <segue destination="BEM-qd-uRU" kind="push" identifier="goToHomeVC2" id="buH-bP-sRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsD-2o-zV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1059" y="420"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="ECb-q7-Dko">
+            <objects>
+                <viewController id="hnS-ao-NdB" customClass="profileVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wi0-kV-KNn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3.png" id="b0Q-Cq-nLp">
+                                <rect key="frame" x="104" y="83" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" id="vPA-62-72l">
+                                <rect key="frame" x="50" y="214" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hnS-ao-NdB" id="Cgy-I5-nVG"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bio" minimumFontSize="17" id="kCS-Au-jBy">
+                                <rect key="frame" x="50" y="371" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hnS-ao-NdB" id="3en-ei-aZU"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Yr-Ze-Ecz">
+                                <rect key="frame" x="101" y="509" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton_click:" destination="hnS-ao-NdB" eventType="touchUpInside" id="lkW-RL-Agl"/>
+                                    <segue destination="BEM-qd-uRU" kind="push" identifier="goToHomeVC3" id="caP-GO-Imz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WHI-cr-W1K">
+                                <rect key="frame" x="224" y="118" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeImageButton_click:" destination="hnS-ao-NdB" eventType="touchUpInside" id="7rG-Kz-jc6"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" id="zYH-Ky-KVp">
+                                <rect key="frame" x="50" y="318" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hnS-ao-NdB" id="NLe-me-Dxb"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="hcs-We-DYp"/>
+                    <connections>
+                        <outlet property="bioField" destination="kCS-Au-jBy" id="6UP-YD-0kQ"/>
+                        <outlet property="changeProfileImageButton" destination="WHI-cr-W1K" id="MSO-Fx-6xR"/>
+                        <outlet property="passwordField" destination="zYH-Ky-KVp" id="psP-Lq-BFh"/>
+                        <outlet property="profileImage" destination="b0Q-Cq-nLp" id="ma1-Xb-QXe"/>
+                        <outlet property="submitButton" destination="2Yr-Ze-Ecz" id="OdB-og-y3v"/>
+                        <outlet property="usernameField" destination="vPA-62-72l" id="UZ1-zk-1Wa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCf-vr-e7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1166"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ltu-Ws-P4t">
+            <objects>
+                <viewController id="BEM-qd-uRU" customClass="homeVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Izw-Pc-nhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0lq-k9-XAi">
+                                <rect key="frame" x="123" y="95" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="All Users">
+                                    <color key="titleColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allUsersButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="H12-Zj-cCb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Vl-67-5kp">
+                                <rect key="frame" x="50" y="288" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="ggR-vq-7ft"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wul-iy-AB2">
+                                <rect key="frame" x="136" y="288" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dev">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="devButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="3iE-6j-4op"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Np-ff-xzJ">
+                                <rect key="frame" x="222" y="288" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Other">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="otherButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="PiG-Go-Cp8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nCz-4y-eyo">
+                                <rect key="frame" x="110" y="250" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uEc-Sj-9d5">
+                                <rect key="frame" x="103" y="472" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Vote For Beer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="voteForBeerButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="yFu-7W-wat"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ZK-0W-9U3">
+                                <rect key="frame" x="98" y="362" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Edit My Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hnS-ao-NdB" kind="push" identifier="goToProfileVC" id="QFo-Wa-3bt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Ixb-uq-Vpn">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NsA-UE-I15">
+                            <connections>
+                                <action selector="logoutButton_click:" destination="BEM-qd-uRU" id="wmY-xM-bYY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Messages" id="eew-bV-abc">
+                            <connections>
+                                <segue destination="it0-jQ-eP2" kind="push" id="cep-uB-EpV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deptLabel" destination="nCz-4y-eyo" id="en0-Ln-xPW"/>
+                        <outlet property="devDeptButton" destination="Wul-iy-AB2" id="3PC-F0-h2Z"/>
+                        <outlet property="otherDeptButton" destination="7Np-ff-xzJ" id="Yw3-PR-O69"/>
+                        <outlet property="testDeptButton" destination="4Vl-67-5kp" id="nRV-ef-QwO"/>
+                        <outlet property="usersButton" destination="0lq-k9-XAi" id="eIe-CL-g51"/>
+                        <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC" id="Fpi-Hs-M87"/>
+                        <segue destination="3jp-5U-OvR" kind="push" identifier="goToKegeratorVC" id="zcM-Vy-9ud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-Ui-LLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="1173"/>
+        </scene>
+        <!--VOTE FOR BEER-->
+        <scene sceneID="j1r-hk-vmQ">
+            <objects>
+                <viewController id="3jp-5U-OvR" customClass="kegeratorVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sHK-Uz-KQL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote or Die" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="odA-sW-rvh">
+                                <rect key="frame" x="118" y="101" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6mx-2a-2fa">
+                                <rect key="frame" x="23" y="163" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Beer 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beerOneButton_click:" destination="3jp-5U-OvR" eventType="touchUpInside" id="1ah-Ej-E0s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0qu-rQ-UHm">
+                                <rect key="frame" x="23" y="248" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Beer 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beerTwoButton_click:" destination="3jp-5U-OvR" eventType="touchUpInside" id="L6t-fE-bj4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vfa-EU-aFq">
+                                <rect key="frame" x="23" y="325" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Beer 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beerThreeButton_click:" destination="3jp-5U-OvR" eventType="touchUpInside" id="ny1-Z2-pjY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WG1-fq-HdN">
+                                <rect key="frame" x="108" y="167" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yhg-3E-2dI">
+                                <rect key="frame" x="108" y="252" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6wl-JC-RSH">
+                                <rect key="frame" x="34" y="443" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9GE-iu-vxS">
+                                <rect key="frame" x="141" y="442" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99w-ab-YJ7">
+                                <rect key="frame" x="243" y="442" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MGi-8e-Ig2">
+                                <rect key="frame" x="34" y="472" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VCg-3j-8nF">
+                                <rect key="frame" x="138" y="472" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8tU-mN-DtU">
+                                <rect key="frame" x="243" y="472" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSn-Zg-dkX">
+                                <rect key="frame" x="108" y="329" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VOTE FOR BEER" id="awL-FZ-kUi"/>
+                    <connections>
+                        <outlet property="beerOneButton" destination="6mx-2a-2fa" id="XP2-zK-COz"/>
+                        <outlet property="beerOneDesc" destination="WG1-fq-HdN" id="hnk-N8-mCt"/>
+                        <outlet property="beerOneVotes" destination="MGi-8e-Ig2" id="V2X-TS-UEx"/>
+                        <outlet property="beerThreeButton" destination="Vfa-EU-aFq" id="t43-vb-TXV"/>
+                        <outlet property="beerThreeDesc" destination="eSn-Zg-dkX" id="Uhc-b3-sHK"/>
+                        <outlet property="beerThreeVotes" destination="8tU-mN-DtU" id="wo7-a9-86C"/>
+                        <outlet property="beerTwoButton" destination="0qu-rQ-UHm" id="XTG-S8-yu0"/>
+                        <outlet property="beerTwoDesc" destination="Yhg-3E-2dI" id="AG8-8y-xTR"/>
+                        <outlet property="beerTwoVotes" destination="VCg-3j-8nF" id="X94-dn-BdZ"/>
+                        <outlet property="voteordieLabel" destination="odA-sW-rvh" id="nhD-vY-fMg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AV-lo-OZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1906"/>
         </scene>
         <!--MessagesVC-->
         <scene sceneID="lME-DY-2it">
@@ -242,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0we-WF-cEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="1882"/>
+            <point key="canvasLocation" x="634" y="1916"/>
         </scene>
         <!--Detail-->
         <scene sceneID="sYe-Wr-zdR">
@@ -294,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCk-jr-kQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="1173"/>
+            <point key="canvasLocation" x="1495" y="1173"/>
         </scene>
         <!--Users-->
         <scene sceneID="9SB-p8-Paz">
@@ -351,11 +687,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Users" id="qOd-dJ-nLX">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NsA-UE-I15">
-                            <connections>
-                                <action selector="logoutButton_click:" destination="5JZ-0E-FJu" id="omh-u0-C4O"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Messages" id="vWs-hH-l92">
                             <connections>
                                 <segue destination="it0-jQ-eP2" kind="push" identifier="" id="qjL-Bf-scU"/>
@@ -369,7 +700,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckw-LX-8s1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="1173"/>
+            <point key="canvasLocation" x="1059" y="1173"/>
         </scene>
         <!--ConversationVC-->
         <scene sceneID="IFE-wL-Kyz">
@@ -432,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEc-Tm-WPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="1876"/>
+            <point key="canvasLocation" x="1495" y="1922"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WuO-2h-oZo">
@@ -462,7 +793,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FlI-95-DQn"/>
+        <segue reference="caP-GO-Imz"/>
+        <segue reference="qjL-Bf-scU"/>
         <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -80,8 +80,24 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                         }
                     }
                 }
+                self.refeshResults()
             }
+
         }
+    }
+
+    func refeshResults(){
+        beerVotesArray.removeAll(keepCapacity: false)
+
+        var query = PFQuery(className: "Beer")
+        var objects = query.findObjects()
+
+        for object in objects{
+            self.beerVotesArray.append(object["Votes"] as Int)
+        }
+
+        self.beerTable.reloadData()
+
     }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

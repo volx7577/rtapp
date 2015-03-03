@@ -366,7 +366,7 @@
                         <outlet property="testDeptButton" destination="4Vl-67-5kp" id="nRV-ef-QwO"/>
                         <outlet property="usersButton" destination="0lq-k9-XAi" id="eIe-CL-g51"/>
                         <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC" id="Fpi-Hs-M87"/>
-                        <segue destination="3jp-5U-OvR" kind="push" identifier="goToKegeratorVC" id="zcM-Vy-9ud"/>
+                        <segue destination="cmB-E1-Gia" kind="push" identifier="goToKegeratorVC" id="GxZ-ag-sI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-Ui-LLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,7 +506,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AV-lo-OZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="1986"/>
+            <point key="canvasLocation" x="-8" y="2678"/>
+        </scene>
+        <!--KegeratorVC-->
+        <scene sceneID="fSM-ww-g0s">
+            <objects>
+                <viewController id="cmB-E1-Gia" customClass="kegeratorVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="thA-09-27m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="G9g-LM-BOm">
+                                <rect key="frame" x="0.0" y="310" width="320" height="258"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="FGK-EN-y6R" customClass="beerCell" customModule="RTApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FGK-EN-y6R" id="hmg-Cz-oYT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ns-k3-sHL">
+                                                    <rect key="frame" x="223" y="24" width="43" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uWC-EZ-xxP">
+                                                    <rect key="frame" x="35" y="15" width="77" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Beer Name">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="votesButton" destination="uWC-EZ-xxP" id="0RC-so-kiC"/>
+                                            <outlet property="votesLabel" destination="1Ns-k3-sHL" id="Yxk-hl-gOO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cmB-E1-Gia" id="329-g3-pRg"/>
+                                    <outlet property="delegate" destination="cmB-E1-Gia" id="6n6-xP-5mr"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOTE OR DIE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="657-xX-aFM">
+                                <rect key="frame" x="108" y="48" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SMo-4Y-wpx"/>
+                    <connections>
+                        <outlet property="beerTable" destination="G9g-LM-BOm" id="MnU-EZ-KpA"/>
+                        <outlet property="voteordieLabel" destination="657-xX-aFM" id="dh6-O3-iJw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcC-Ge-2YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1978"/>
         </scene>
         <!--MessagesVC-->
         <scene sceneID="lME-DY-2it">
@@ -793,8 +859,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Uit-18-39r"/>
-        <segue reference="qjL-Bf-scU"/>
         <segue reference="x8J-I8-rpm"/>
+        <segue reference="cep-uB-EpV"/>
+        <segue reference="caP-GO-Imz"/>
     </inferredMetricsTieBreakers>
 </document>

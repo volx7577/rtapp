@@ -13,6 +13,7 @@
 		5F1AB4501AA4FB10004844CA /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB44F1AA4FB10004844CA /* homeVC.swift */; };
 		5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4531AA503AE004844CA /* kegeratorVC.swift */; };
 		5F1AB4561AA515D7004844CA /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4551AA515D7004844CA /* profileVC.swift */; };
+		5F72227A1AA616F900741245 /* beerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7222791AA616F900741245 /* beerCell.swift */; };
 		5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */; };
 		5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707561AA0CD4B0018AEBB /* loginVC.swift */; };
 		5F77075A1AA0CD4B0018AEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7707581AA0CD4B0018AEBB /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		5F1AB44F1AA4FB10004844CA /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		5F1AB4531AA503AE004844CA /* kegeratorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kegeratorVC.swift; sourceTree = "<group>"; };
 		5F1AB4551AA515D7004844CA /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
+		5F7222791AA616F900741245 /* beerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerCell.swift; sourceTree = "<group>"; };
 		5F77074F1AA0CD4B0018AEBB /* RTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7707531AA0CD4B0018AEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				5F77079C1AA0F4C80018AEBB /* conversationVC.swift */,
 				5F1AB44B1AA4D616004844CA /* messageCell.swift */,
 				5F1AB4531AA503AE004844CA /* kegeratorVC.swift */,
+				5F7222791AA616F900741245 /* beerCell.swift */,
 				5F7707741AA0CE920018AEBB /* signupVC.swift */,
 				5F1AB44D1AA4EB20004844CA /* userDetailVC.swift */,
 				5F1AB44F1AA4FB10004844CA /* homeVC.swift */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77079B1AA0E0250018AEBB /* resultsCell.swift in Sources */,
+				5F72227A1AA616F900741245 /* beerCell.swift in Sources */,
 				5F7707951AA0D82A0018AEBB /* RTAppHeader.m in Sources */,
 				5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,

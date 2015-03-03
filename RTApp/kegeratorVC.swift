@@ -32,11 +32,11 @@ class kegeratorVC: UIViewController {
 
         voteordieLabel.center = CGPointMake(width/2,90)
         beerOneButton.center = CGPointMake(width/3-60, 180)
-        beerOneDesc.center = CGPointMake(width/3+60, 180)
-        beerTwoDesc.center = CGPointMake(width/3+60,240)
+        beerOneDesc.center = CGPointMake(width/3+80, 180)
         beerTwoButton.center = CGPointMake(width/3-60,240)
+        beerTwoDesc.center = CGPointMake(width/3+80,240)
         beerThreeButton.center = CGPointMake(width/3-60, 300)
-        beerThreeDesc.center = CGPointMake(width/3+60, 300)
+        beerThreeDesc.center = CGPointMake(width/3+80, 300)
 
         beerOneDesc.lineBreakMode = NSLineBreakMode.ByWordWrapping
         beerOneDesc.textAlignment = NSTextAlignment.Left
@@ -128,6 +128,7 @@ class kegeratorVC: UIViewController {
             }
         }
     }
+
     @IBAction func beerThreeButton_click(sender: AnyObject) {
         var thisBeer = self.beerThreeButton.titleLabel!.text
         let bPredicate = NSPredicate(format: "Name = '"+thisBeer!+"'")

@@ -152,6 +152,7 @@
 				5F7707741AA0CE920018AEBB /* signupVC.swift */,
 				5F1AB44D1AA4EB20004844CA /* userDetailVC.swift */,
 				5F1AB44F1AA4FB10004844CA /* homeVC.swift */,
+				5F1AB4551AA515D7004844CA /* profileVC.swift */,
 				5F1AB4491AA4D550004844CA /* messagesVC.swift */,
 				5F7707981AA0DF6D0018AEBB /* userVC.swift */,
 				5F77079A1AA0E0250018AEBB /* resultsCell.swift */,
@@ -159,7 +160,6 @@
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
 				5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */,
 				5F7707521AA0CD4B0018AEBB /* Supporting Files */,
-				5F1AB4551AA515D7004844CA /* profileVC.swift */,
 			);
 			path = RTApp;
 			sourceTree = "<group>";

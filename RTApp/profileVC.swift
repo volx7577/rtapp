@@ -29,6 +29,21 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         passwordField.frame = CGRectMake(16, 340, width-32, 30)
         bioField.frame = CGRectMake(16, 380, width-32, 30)
         submitButton.center = CGPointMake(width/2, height-30)
+
+        var user = PFUser.currentUser()
+        usernameField.text = user.username
+        bioField.text = user["bio"] as String
+
+        user["photo"].getDataInBackgroundWithBlock({
+            (imageData: NSData!, error:NSError!) -> Void in
+
+            if error == nil{
+                let image = UIImage(data: imageData)
+                self.profileImage.image = image
+            }
+        })
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +93,7 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
 
+    //TODO: change profile Image
     @IBAction func saveButton_click(sender: AnyObject) {
         var user = PFUser.currentUser()
         if (usernameField.text != "") {
@@ -93,7 +109,16 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
         user["photo"] = imageFile
 
-        user.save()
+
+        user.saveInBackgroundWithBlock{
+            (success: Bool!, error: NSError!) -> Void in
+            if error == nil{
+                println("saved current installation")
+            }else{
+                println("idk dawg, some shit went down.")
+            }
+        }
+
     }
 
     func textFieldDidEndEditing(textField: UITextField) {

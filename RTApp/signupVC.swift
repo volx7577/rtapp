@@ -5,7 +5,7 @@
 //  Created by Ben Barclay on 2/27/15.
 //  Copyright (c) 2015 Ben Barclay. All rights reserved.
 //
-
+import AddressBook
 import UIKit
 
 class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate  {
@@ -18,6 +18,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     @IBOutlet weak var bioField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var deptField: UITextField!
+    @IBOutlet weak var phoneNumberField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         bioField.frame = CGRectMake(16, 380, width-32, 30)
         deptField.frame = CGRectMake(16, 420, width-32, 30)
         signupButton.center = CGPointMake(width/2, height-30)
+        phoneNumberField.frame = CGRectMake(16, 460, width-32, 30)
+
+        //TODO: find out how to extract your own number from here.
+        getContactNames()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +64,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         emailField.resignFirstResponder()
         bioField.resignFirstResponder()
         deptField.resignFirstResponder()
+        phoneNumberField.resignFirstResponder()
         return true
     }
 
@@ -72,12 +78,13 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
-            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField){
+            println(textField)
+            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField || textField == self.phoneNumberField){
                 UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
-                    self.view.center = CGPointMake(width/2, (height/2)-130)
+                    self.view.center = CGPointMake(width/2, (height/2)-190)
                     }, completion: {
                         (finished:Bool) in
-                        //
+                       //
                 })
             }
         }
@@ -88,7 +95,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
-            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField){
+            if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField || textField == self.phoneNumberField){
                 UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
                     self.view.center = CGPointMake(width/2, (height/2))
                     }, completion: {
@@ -106,9 +113,11 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         user.email = emailField.text
         user["bio"] = bioField.text
         user["dept"] = deptField.text
+        user["phone"] = phoneNumberField.text
         let imageData = UIImagePNGRepresentation(self.profileImage.image)
         let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
         user["photo"] = imageFile
+        user["status"] = ""
 
         user.signUpInBackgroundWithBlock(){
             (succeeded:Bool!, signUpError:NSError!) -> Void in
@@ -133,5 +142,55 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             }
         }
     }
+
+
+
+////////ADDRESS BOOK STUFFFFFFF
+
+    var addressBook: ABAddressBookRef?
+
+    func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
+        if let ab = abRef {
+            return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
+        }
+        return nil
+    }
+
+    func test() {
+        if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.NotDetermined) {
+            println("requesting access...")
+            var errorRef: Unmanaged<CFError>? = nil
+            addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
+            ABAddressBookRequestAccessWithCompletion(addressBook, { success, error in
+                if success {
+                    self.getContactNames()
+                }
+                else {
+                    println("error")
+                }
+            })
+        }
+        else if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Denied || ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Restricted) {
+            println("access denied")
+        }
+        else if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Authorized) {
+            println("access granted")
+            self.getContactNames()
+        }
+    }
+
+    func getContactNames() {
+        var errorRef: Unmanaged<CFError>?
+        addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
+        var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
+        println("records in the array \(contactList.count)")
+
+        for record:ABRecordRef in contactList {
+            var contactPerson: ABRecordRef = record
+            var contactName: String = ABRecordCopyCompositeName(contactPerson).takeRetainedValue() as NSString
+            println ("contactName \(contactName)")
+        }
+    }
+
     
 }

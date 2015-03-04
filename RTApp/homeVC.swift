@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class homeVC: UIViewController {
 
     @IBOutlet weak var usersButton: UIButton!
@@ -16,21 +15,24 @@ class homeVC: UIViewController {
     @IBOutlet weak var testDeptButton: UIButton!
     @IBOutlet weak var devDeptButton: UIButton!
     @IBOutlet weak var otherDeptButton: UIButton!
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var beerButton: UIButton!
 
     var deptSelected = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
         let width = view.frame.size.width
+        let height = view.frame.size.height
 
         usersButton.center = CGPointMake(width/2, 90)
         deptLabel.center = CGPointMake(width/2, 150)
         testDeptButton.center = CGPointMake(width/3-60, 180)
         devDeptButton.center = CGPointMake((2*width)/3-60,180)
         otherDeptButton.center = CGPointMake(width-60, 180)
+        statusButton.center = CGPointMake(width/2, height-70)
+        beerButton.center = CGPointMake(width/2, height-30)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -66,15 +68,23 @@ class homeVC: UIViewController {
         deptSelected = "other"
         self.performSegueWithIdentifier("goToUserVC", sender: self)
     }
+
     @IBAction func devButton_click(sender: AnyObject) {
         deptSelected = "dev"
         self.performSegueWithIdentifier("goToUserVC", sender: self)
     }
+
     @IBAction func testButton_click(sender: AnyObject) {
          deptSelected = "test"
         self.performSegueWithIdentifier("goToUserVC", sender: self)
     }
+
+    @IBAction func statusButton_click(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToStatusVC", sender: self)
+    }
+
     @IBAction func voteForBeerButton_click(sender: AnyObject) {
         self.performSegueWithIdentifier("goToKegeratorVC", sender: self)
     }
+
 }

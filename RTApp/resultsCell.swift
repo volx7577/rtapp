@@ -15,6 +15,8 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
 
     var bio:String = ""
+    var phone:String = ""
+    var status:String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()

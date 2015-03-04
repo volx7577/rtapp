@@ -162,6 +162,12 @@
                                     <outlet property="delegate" destination="3tc-j2-a7s" id="rvU-Rz-KNF"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone number" minimumFontSize="17" id="GEO-ez-bKf">
+                                <rect key="frame" x="56" y="469" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.34092493832971826" blue="0.42956438084277859" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -172,6 +178,7 @@
                         <outlet property="deptField" destination="y7u-eW-cgv" id="XrW-7N-tae"/>
                         <outlet property="emailField" destination="JwA-ub-eVN" id="f8k-V0-NEl"/>
                         <outlet property="passwordField" destination="90w-Dt-cqz" id="mAW-gc-rpo"/>
+                        <outlet property="phoneNumberField" destination="GEO-ez-bKf" id="SMG-85-eg7"/>
                         <outlet property="profileImage" destination="oDF-Ue-PyY" id="LrV-mR-umU"/>
                         <outlet property="signupButton" destination="syR-vs-xnJ" id="gwS-Lf-PFY"/>
                         <outlet property="usernameField" destination="EhQ-T2-LMn" id="shD-kr-d9r"/>
@@ -180,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsD-2o-zV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="420"/>
+            <point key="canvasLocation" x="1077" y="420"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="ECb-q7-Dko">
@@ -261,7 +268,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCf-vr-e7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="1173"/>
+            <point key="canvasLocation" x="102" y="1847"/>
+        </scene>
+        <!--StatusVC-->
+        <scene sceneID="7WX-H6-JUT">
+            <objects>
+                <viewController id="0BF-lp-HH1" customClass="statusVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpE-do-jfA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WFH, OOO, In Office, etc." minimumFontSize="17" id="s9C-9a-EsI">
+                                <rect key="frame" x="16" y="118" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Your Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r9g-2L-2Ya">
+                                <rect key="frame" x="84" y="49" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sW-FC-th9">
+                                <rect key="frame" x="128" y="195" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton_click:" destination="0BF-lp-HH1" eventType="touchUpInside" id="tMB-j4-Xhj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.092499540905522371" green="1" blue="0.19727848294646633" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="2sW-FC-th9" id="lyl-df-0O6"/>
+                        <outlet property="statusField" destination="s9C-9a-EsI" id="nmY-Jk-r5E"/>
+                        <outlet property="statusLabel" destination="r9g-2L-2Ya" id="fRI-qy-4XM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOl-x7-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1135"/>
         </scene>
         <!--Home-->
         <scene sceneID="ltu-Ws-P4t">
@@ -344,6 +395,17 @@
                                     <segue destination="hnS-ao-NdB" kind="push" identifier="goToProfileVC" id="QFo-Wa-3bt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vHF-xY-9HK">
+                                <rect key="frame" x="99" y="414" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Update Status">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="statusButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="Lgi-yL-NaV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -360,18 +422,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="beerButton" destination="uEc-Sj-9d5" id="W9F-fy-y9d"/>
                         <outlet property="deptLabel" destination="nCz-4y-eyo" id="en0-Ln-xPW"/>
                         <outlet property="devDeptButton" destination="Wul-iy-AB2" id="3PC-F0-h2Z"/>
                         <outlet property="otherDeptButton" destination="7Np-ff-xzJ" id="Yw3-PR-O69"/>
+                        <outlet property="statusButton" destination="vHF-xY-9HK" id="mye-EK-qGF"/>
                         <outlet property="testDeptButton" destination="4Vl-67-5kp" id="nRV-ef-QwO"/>
                         <outlet property="usersButton" destination="0lq-k9-XAi" id="eIe-CL-g51"/>
                         <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC" id="Fpi-Hs-M87"/>
                         <segue destination="cmB-E1-Gia" kind="push" identifier="goToKegeratorVC" id="GxZ-ag-sI2"/>
+                        <segue destination="0BF-lp-HH1" kind="modal" identifier="goToStatusVC" id="mcS-Sc-Pkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-Ui-LLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="1173"/>
+            <point key="canvasLocation" x="618" y="1135"/>
         </scene>
         <!--BeerVC-->
         <scene sceneID="DNW-DG-JPC">
@@ -421,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hJ-kJ-fFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="2730"/>
+            <point key="canvasLocation" x="606" y="3366"/>
         </scene>
         <!--KegeratorVC-->
         <scene sceneID="fSM-ww-g0s">
@@ -521,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcC-Ge-2YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="1978"/>
+            <point key="canvasLocation" x="618" y="2540"/>
         </scene>
         <!--MessagesVC-->
         <scene sceneID="lME-DY-2it">
@@ -593,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0we-WF-cEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="1986"/>
+            <point key="canvasLocation" x="1071" y="2540"/>
         </scene>
         <!--Detail-->
         <scene sceneID="sYe-Wr-zdR">
@@ -631,21 +696,56 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nQe-j1-CWy">
+                                <rect key="frame" x="109" y="455" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Phone Number">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="phoneNumberButton_click:" destination="2us-hd-jYy" eventType="touchUpInside" id="soJ-8C-RlP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="haZ-LB-gHa">
+                                <rect key="frame" x="139" y="387" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mhc-Vb-bK5">
+                                <rect key="frame" x="51" y="160" width="31" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wM0-cy-wSh">
+                                <rect key="frame" x="45" y="363" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="Vey-MU-jbw"/>
                     <connections>
+                        <outlet property="LbioLabel" destination="Mhc-Vb-bK5" id="Qw7-Mb-qbw"/>
+                        <outlet property="LstatusLabel" destination="wM0-cy-wSh" id="baE-AZ-mLJ"/>
                         <outlet property="bioLabel" destination="y6A-pN-mPk" id="AVJ-rJ-9ba"/>
                         <outlet property="messageButton" destination="Y4D-90-TjL" id="81z-4B-syH"/>
+                        <outlet property="phoneNumberButton" destination="nQe-j1-CWy" id="cc9-3E-28C"/>
                         <outlet property="profileImage" destination="uKw-fP-QI0" id="8qW-ut-4Uk"/>
+                        <outlet property="statusLabel" destination="haZ-LB-gHa" id="2t0-4h-H8f"/>
                         <outlet property="usernameLabel" destination="HhZ-eH-A9c" id="QMU-cw-ppG"/>
                         <segue destination="QZ6-uN-mw8" kind="push" identifier="goToConversationVC" id="8nB-8S-PTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCk-jr-kQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="1173"/>
+            <point key="canvasLocation" x="1511" y="1135"/>
         </scene>
         <!--Users-->
         <scene sceneID="9SB-p8-Paz">
@@ -715,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckw-LX-8s1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="1173"/>
+            <point key="canvasLocation" x="1077" y="1135"/>
         </scene>
         <!--ConversationVC-->
         <scene sceneID="IFE-wL-Kyz">
@@ -778,7 +878,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEc-Tm-WPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="1986"/>
+            <point key="canvasLocation" x="1511" y="2540"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WuO-2h-oZo">
@@ -809,7 +909,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="caP-GO-Imz"/>
-        <segue reference="cep-uB-EpV"/>
-        <segue reference="8nB-8S-PTf"/>
+        <segue reference="qjL-Bf-scU"/>
+        <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,6 +41,8 @@
 		5F7707991AA0DF6D0018AEBB /* userVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707981AA0DF6D0018AEBB /* userVC.swift */; };
 		5F77079B1AA0E0250018AEBB /* resultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77079A1AA0E0250018AEBB /* resultsCell.swift */; };
 		5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77079C1AA0F4C80018AEBB /* conversationVC.swift */; };
+		5F859C4A1AA7A4EF00C6B1C3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F859C491AA7A4EF00C6B1C3 /* AddressBook.framework */; };
+		5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F859C4B1AA7B23200C6B1C3 /* statusVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		5F7707981AA0DF6D0018AEBB /* userVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userVC.swift; sourceTree = "<group>"; };
 		5F77079A1AA0E0250018AEBB /* resultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultsCell.swift; sourceTree = "<group>"; };
 		5F77079C1AA0F4C80018AEBB /* conversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conversationVC.swift; sourceTree = "<group>"; };
+		5F859C491AA7A4EF00C6B1C3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5F859C4B1AA7B23200C6B1C3 /* statusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statusVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F859C4A1AA7A4EF00C6B1C3 /* AddressBook.framework in Frameworks */,
 				5F7707911AA0D8090018AEBB /* libsqlite3.dylib in Frameworks */,
 				5F77078F1AA0D8030018AEBB /* libz.dylib in Frameworks */,
 				5F77078D1AA0D7FE0018AEBB /* SystemConfiguration.framework in Frameworks */,
@@ -154,6 +159,7 @@
 				5F7707561AA0CD4B0018AEBB /* loginVC.swift */,
 				5F77079C1AA0F4C80018AEBB /* conversationVC.swift */,
 				5F1AB44B1AA4D616004844CA /* messageCell.swift */,
+				5F859C4B1AA7B23200C6B1C3 /* statusVC.swift */,
 				5F1AB4531AA503AE004844CA /* kegeratorVC.swift */,
 				5F7222791AA616F900741245 /* beerCell.swift */,
 				5F7707741AA0CE920018AEBB /* signupVC.swift */,
@@ -202,6 +208,7 @@
 		5F7707921AA0D80E0018AEBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F859C491AA7A4EF00C6B1C3 /* AddressBook.framework */,
 				5F7707901AA0D8090018AEBB /* libsqlite3.dylib */,
 				5F77078E1AA0D8030018AEBB /* libz.dylib */,
 				5F77078C1AA0D7FE0018AEBB /* SystemConfiguration.framework */,
@@ -329,6 +336,7 @@
 				5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */,
 				5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
+				5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */,
 				5F1AB44E1AA4EB20004844CA /* userDetailVC.swift in Sources */,
 				5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */,
 				5F1AB44A1AA4D550004844CA /* messagesVC.swift in Sources */,

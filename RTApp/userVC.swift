@@ -9,6 +9,8 @@
 import UIKit
 
 var userName = ""
+var phone = ""
+var status = ""
 
 class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,6 +20,8 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var resultsProfileNameArray = [String]()
     var resultsImageFiles = [PFFile]()
     var resultsBioArrays = [String]()
+    var resultsPhoneArray = [String]()
+    var resultsStatusArray = [String]()
 
     var deptWasSelected = ""
 
@@ -45,6 +49,8 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             resultsProfileNameArray.removeAll(keepCapacity: false)
             resultsImageFiles.removeAll(keepCapacity: false)
             resultsBioArrays.removeAll(keepCapacity: false)
+            resultsPhoneArray.removeAll(keepCapacity: false)
+            resultsStatusArray.removeAll(keepCapacity: false)
             self.resultsTable.reloadData()
         }
 
@@ -61,6 +67,12 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.resultsProfileNameArray.append(object.email)
             self.resultsImageFiles.append(object["photo"] as PFFile)
             self.resultsBioArrays.append(object["bio"] as String)
+            self.resultsPhoneArray.append(object["phone"] as String)
+            if object["status"] == nil {
+                self.resultsStatusArray.append("" as String)
+            } else{
+                self.resultsStatusArray.append(object["status"] as String)
+            }
 
             self.resultsTable.reloadData()
         }
@@ -73,6 +85,8 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         otherProfileName = cell.profileNameLabel.text!
         bio = cell.bio
         profileImagew = cell.profileImage.image
+        phone = cell.phone
+        status = cell.status
 
         self.performSegueWithIdentifier("goToUserDetailVC", sender: self)
     }
@@ -83,7 +97,8 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             var datas = segue.destinationViewController as userDetailVC
             datas.dataPassedName = otherName
             datas.dataPassedBio = bio
-
+            datas.dataPassedPhone = phone
+            datas.dataPassedStatus = status
         }
     }
 
@@ -102,6 +117,8 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.usernameLabel.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLabel.text = self.resultsProfileNameArray[indexPath.row]
         cell.bio = self.resultsBioArrays[indexPath.row]
+        cell.phone = self.resultsPhoneArray[indexPath.row]
+        cell.status = self.resultsStatusArray[indexPath.row]
 
         resultsImageFiles[indexPath.row].getDataInBackgroundWithBlock({
             (imageData: NSData!, error:NSError!) -> Void in

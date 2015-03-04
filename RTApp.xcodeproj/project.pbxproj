@@ -13,6 +13,8 @@
 		5F1AB4501AA4FB10004844CA /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB44F1AA4FB10004844CA /* homeVC.swift */; };
 		5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4531AA503AE004844CA /* kegeratorVC.swift */; };
 		5F1AB4561AA515D7004844CA /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4551AA515D7004844CA /* profileVC.swift */; };
+		5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CC3871AA63B7900913C01 /* beerVC.swift */; };
+		5F5CC38A1AA63DBE00913C01 /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CC3891AA63DBE00913C01 /* beer.png */; };
 		5F72227A1AA616F900741245 /* beerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7222791AA616F900741245 /* beerCell.swift */; };
 		5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */; };
 		5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707561AA0CD4B0018AEBB /* loginVC.swift */; };
@@ -58,6 +60,8 @@
 		5F1AB44F1AA4FB10004844CA /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		5F1AB4531AA503AE004844CA /* kegeratorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kegeratorVC.swift; sourceTree = "<group>"; };
 		5F1AB4551AA515D7004844CA /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
+		5F5CC3871AA63B7900913C01 /* beerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerVC.swift; sourceTree = "<group>"; };
+		5F5CC3891AA63DBE00913C01 /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer.png; path = ../../../Downloads/beer.png; sourceTree = "<group>"; };
 		5F7222791AA616F900741245 /* beerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerCell.swift; sourceTree = "<group>"; };
 		5F77074F1AA0CD4B0018AEBB /* RTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7707531AA0CD4B0018AEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				5F1AB4551AA515D7004844CA /* profileVC.swift */,
 				5F1AB4491AA4D550004844CA /* messagesVC.swift */,
 				5F7707981AA0DF6D0018AEBB /* userVC.swift */,
+				5F5CC3871AA63B7900913C01 /* beerVC.swift */,
 				5F77079A1AA0E0250018AEBB /* resultsCell.swift */,
 				5F7707581AA0CD4B0018AEBB /* Main.storyboard */,
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
@@ -170,6 +175,7 @@
 		5F7707521AA0CD4B0018AEBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F5CC3891AA63DBE00913C01 /* beer.png */,
 				5F7707761AA0CF3A0018AEBB /* 3.png */,
 				5F7707531AA0CD4B0018AEBB /* Info.plist */,
 			);
@@ -296,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77075A1AA0CD4B0018AEBB /* Main.storyboard in Resources */,
+				5F5CC38A1AA63DBE00913C01 /* beer.png in Resources */,
 				5F77075F1AA0CD4B0018AEBB /* LaunchScreen.xib in Resources */,
 				5F77075C1AA0CD4B0018AEBB /* Images.xcassets in Resources */,
 				5F7707771AA0CF3A0018AEBB /* 3.png in Resources */,
@@ -320,6 +327,7 @@
 				5F72227A1AA616F900741245 /* beerCell.swift in Sources */,
 				5F7707951AA0D82A0018AEBB /* RTAppHeader.m in Sources */,
 				5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */,
+				5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
 				5F1AB44E1AA4EB20004844CA /* userDetailVC.swift in Sources */,
 				5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */,

@@ -12,10 +12,14 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     @IBOutlet weak var beerTable: UITableView!
     @IBOutlet weak var voteordieLabel: UILabel!
+    @IBOutlet weak var beerOneButton: UIButton!
+    @IBOutlet weak var beerTwoButton: UIButton!
+    @IBOutlet weak var beerThreeButton: UIButton!
 
     var beerNameArray = [String]()
     var beerDescArray = [String]()
     var beerVotesArray = [Int]()
+    var indexForBeerVC = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,6 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         beerTable.frame = CGRectMake(0, 320, width, height - 320)
         voteordieLabel.center = CGPointMake(width/2, 90)
-    }
-
-    override func viewDidAppear(animated: Bool) {
 
         var query = PFQuery(className: "Beer")
         var objects = query.findObjects()
@@ -37,8 +38,24 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             self.beerDescArray.append(object["Description"] as String)
             self.beerVotesArray.append(object["Votes"] as Int)
         }
+        beerOneButton.setTitle(beerNameArray[0], forState: UIControlState.Normal)
+        beerTwoButton.setTitle(beerNameArray[1], forState: UIControlState.Normal)
+        beerThreeButton.setTitle(beerNameArray[2], forState: UIControlState.Normal)
 
         self.beerTable.reloadData()
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
+
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goToBeerVC") {
+
+            var datas = segue.destinationViewController as beerVC
+            datas.index = indexForBeerVC
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +119,21 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
 
+    }
 
+    @IBAction func beerOneButton_click(sender: AnyObject) {
+        indexForBeerVC = 0
+        self.performSegueWithIdentifier("goToBeerVC", sender: self)
+    }
+
+    @IBAction func beerTwoButton_click(sender: AnyObject) {
+        indexForBeerVC = 1
+        self.performSegueWithIdentifier("goToBeerVC", sender: self)
+    }
+
+    @IBAction func beerThreeButton_click(sender: AnyObject) {
+        indexForBeerVC = 2
+        self.performSegueWithIdentifier("goToBeerVC", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

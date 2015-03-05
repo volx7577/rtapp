@@ -158,6 +158,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     func test() {
+
         if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.NotDetermined) {
             println("requesting access...")
             var errorRef: Unmanaged<CFError>? = nil
@@ -165,8 +166,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             ABAddressBookRequestAccessWithCompletion(addressBook, { success, error in
                 if success {
                     self.getContactNames()
-                }
-                else {
+                } else {
                     println("error")
                 }
             })
@@ -181,6 +181,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     func getContactNames() {
+
         var errorRef: Unmanaged<CFError>?
         addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
         var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
@@ -193,5 +194,4 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         }
     }
 
-    
 }

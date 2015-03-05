@@ -32,8 +32,8 @@ class homeVC: UIViewController {
         testDeptButton.center = CGPointMake(width/3-60, 150)
         devDeptButton.center = CGPointMake((2*width)/3-60,150)
         otherDeptButton.center = CGPointMake(width-60, 150)
-        statusButton.center = CGPointMake(width/2, height-1000)
-        beerButton.center = CGPointMake(width/2, height-60)
+        statusButton.center = CGPointMake(width/2, height-110)
+        beerButton.center = CGPointMake(width/2, height-70)
         photoFeedButton.center = CGPointMake(width/2,height-30)
     }
 

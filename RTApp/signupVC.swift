@@ -116,11 +116,11 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         user["bio"] = bioField.text
         user["dept"] = deptField.text
         user["phone"] = phoneNumberField.text
-        user["photo"] = imageFile
         user["status"] = ""
 
         let imageData = UIImagePNGRepresentation(self.profileImage.image)
         let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
+        user["photo"] = imageFile
 
         user.signUpInBackgroundWithBlock(){
             (succeeded:Bool!, signUpError:NSError!) -> Void in

@@ -17,6 +17,7 @@ class homeVC: UIViewController {
     @IBOutlet weak var otherDeptButton: UIButton!
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var beerButton: UIButton!
+    @IBOutlet weak var photoFeedButton: UIButton!
 
     var deptSelected = ""
     
@@ -27,16 +28,17 @@ class homeVC: UIViewController {
         let height = view.frame.size.height
 
         usersButton.center = CGPointMake(width/2, 90)
-        deptLabel.center = CGPointMake(width/2, 150)
-        testDeptButton.center = CGPointMake(width/3-60, 180)
-        devDeptButton.center = CGPointMake((2*width)/3-60,180)
-        otherDeptButton.center = CGPointMake(width-60, 180)
-        statusButton.center = CGPointMake(width/2, height-70)
-        beerButton.center = CGPointMake(width/2, height-30)
+        deptLabel.center = CGPointMake(width/2, 130)
+        testDeptButton.center = CGPointMake(width/3-60, 150)
+        devDeptButton.center = CGPointMake((2*width)/3-60,150)
+        otherDeptButton.center = CGPointMake(width-60, 150)
+        statusButton.center = CGPointMake(width/2, height-1000)
+        beerButton.center = CGPointMake(width/2, height-60)
+        photoFeedButton.center = CGPointMake(width/2,height-30)
     }
 
     override func viewDidAppear(animated: Bool) {
-              deptSelected = ""
+        deptSelected = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +51,10 @@ class homeVC: UIViewController {
             var datas = segue.destinationViewController as userVC
             datas.deptWasSelected = deptSelected
         }
+    }
+
+    @IBAction func photoFeedButton_click(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToPhotoFeedVC", sender: self)
     }
 
     override func viewWillAppear(animated: Bool) {

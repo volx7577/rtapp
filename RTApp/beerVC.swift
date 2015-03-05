@@ -57,7 +57,6 @@ class beerVC: UIViewController {
                 self.beerImage.image = image
             }
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,4 +67,5 @@ class beerVC: UIViewController {
     @IBAction func closeButton_click(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
+
 }

@@ -38,21 +38,20 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             self.beerDescArray.append(object["Description"] as String)
             self.beerVotesArray.append(object["Votes"] as Int)
         }
+
         beerOneButton.setTitle(beerNameArray[0], forState: UIControlState.Normal)
         beerTwoButton.setTitle(beerNameArray[1], forState: UIControlState.Normal)
         beerThreeButton.setTitle(beerNameArray[2], forState: UIControlState.Normal)
 
         self.beerTable.reloadData()
-
     }
 
     override func viewDidAppear(animated: Bool) {
-
+        //
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToBeerVC") {
-
             var datas = segue.destinationViewController as beerVC
             datas.index = indexForBeerVC
         }
@@ -76,6 +75,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
         var cell = tableView.cellForRowAtIndexPath(indexPath) as beerCell
         var thisBeer = cell.votesButton.titleForState(.Normal)
         let bPredicate = NSPredicate(format: "Name = '"+thisBeer!+"'")
@@ -88,37 +88,34 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             if error == nil {
                 for object in objects {
                     object.incrementKey("Votes")
+
                     object.saveInBackgroundWithBlock{
                         (success:Bool!,error:NSError!) -> Void in
-
                         if success == true{
-
                             println("voted")
                         }
                     }
                 }
                 self.refeshResults()
             }
-
         }
     }
 
     func refeshResults(){
+
         beerVotesArray.removeAll(keepCapacity: false)
 
         var query = PFQuery(className: "Beer")
         var objects = query.findObjects()
-
         for object in objects{
             self.beerVotesArray.append(object["Votes"] as Int)
         }
 
         self.beerTable.reloadData()
-
     }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-
+        //
     }
 
     @IBAction func beerOneButton_click(sender: AnyObject) {
@@ -141,5 +138,4 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // Dispose of any resources that can be recreated.
     }
 
-    
 }

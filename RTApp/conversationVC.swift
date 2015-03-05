@@ -72,7 +72,6 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         resultsScrollView.addGestureRecognizer(tapScrollViewGesture)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "getMessageFunc", name: "getMessage", object: nil)
-
     }
 
     func getMessageFunc(){
@@ -116,6 +115,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     }
 
     func keyboardWillHide(notification: NSNotification){
+
         let dict:NSDictionary = notification.userInfo!
         let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue
         let rect:CGRect = s.CGRectValue()
@@ -133,6 +133,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     }
 
     override func viewDidAppear(animated: Bool) {
+
         var query = PFQuery(className: "_User")
         query.whereKey("username", equalTo: userName)
         var objects = query.findObjects()
@@ -167,7 +168,6 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                             }
                         }
                     }
-
                 }
             }
         }
@@ -209,13 +209,11 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                     self.senderArray.append(object.objectForKey("sender") as String)
                     self.messageArray.append(object.objectForKey("message") as String)
                 }
-
                 for subView in self.resultsScrollView.subviews{
                     subView.removeFromSuperview()
                 }
 
                 for var i = 0; i <= self.messageArray.count-1; i++ {
-
                     if self.senderArray[i] == userName {
 
                         var messageLabel:UILabel = UILabel()
@@ -257,7 +255,8 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
 
                         self.resultsScrollView.contentSize = CGSizeMake(width, self.messageY)
 
-                    }else{
+                    } else{
+
                         var messageLabel:UILabel = UILabel()
                         messageLabel.frame = CGRectMake(0, 0, self.resultsScrollView.frame.size.width-94, CGFloat.max)
                         messageLabel.backgroundColor = UIColor.groupTableViewBackgroundColor()
@@ -306,7 +305,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
 
         if messageTextView.text == "" {
             println("no text")
-        }else{
+        } else{
             var messageDBTable = PFObject(className: "Messages")
             messageDBTable["sender"] = userName
             messageDBTable["other"] = otherName
@@ -333,9 +332,8 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                     self.mLabel.hidden = false
                     self.refreshResults()
                 }
-
             }
         }
-
     }
+    
 }

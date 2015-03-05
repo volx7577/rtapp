@@ -36,13 +36,11 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
         user["photo"].getDataInBackgroundWithBlock({
             (imageData: NSData!, error:NSError!) -> Void in
-
             if error == nil{
                 let image = UIImage(data: imageData)
                 self.profileImage.image = image
             }
         })
-
 
     }
 
@@ -93,7 +91,6 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
 
-    //TODO: change profile Image
     @IBAction func saveButton_click(sender: AnyObject) {
         var user = PFUser.currentUser()
         if (usernameField.text != "") {
@@ -109,7 +106,6 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
         user["photo"] = imageFile
 
-
         user.saveInBackgroundWithBlock{
             (success: Bool!, error: NSError!) -> Void in
             if error == nil{
@@ -118,7 +114,6 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 println("idk dawg, some shit went down.")
             }
         }
-
     }
 
     func textFieldDidEndEditing(textField: UITextField) {
@@ -136,4 +131,5 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             }
         }
     }
+    
 }

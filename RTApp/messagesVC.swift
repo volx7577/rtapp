@@ -37,11 +37,10 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var height = view.frame.size.height
 
         resultsTable.frame = CGRectMake(0, 0, width, height - 64)
-
-        
     }
 
     override func viewDidAppear(animated: Bool) {
+
         resultsNameArray.removeAll(keepCapacity: false)
         resultsImageFiles.removeAll(keepCapacity: false)
 
@@ -69,28 +68,26 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     self.senderArray.append(object.objectForKey("sender") as String)
                     self.otherArray.append(object.objectForKey("other") as String)
                     self.messageArray.append(object.objectForKey("message") as String)
-
                 }
 
                 for var i = 0; i <= self.senderArray.count - 1; i++ {
                     if self.senderArray[i] == userName{
                         self.other2Array.append(self.otherArray[i])
-                    }else{
+                    } else{
                         self.other2Array.append(self.senderArray[i])
                     }
+
                     self.message2Array.append(self.messageArray[i])
                     self.sender2Array.append(self.senderArray[i])
-
                 }
 
                 for var j = 0; j <= self.other2Array.count - 1; j++ {
-                    var isfound = false
 
+                    var isfound = false
                     for var k = 0; k <= self.other3Array.count - 1; k++ {
                         if self.other3Array[k] == self.other2Array[j] {
                             isfound = true
                         }
-
                     }
 
                     if isfound == false{
@@ -98,21 +95,19 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         self.message3Array.append(self.message2Array[j])
                         self.sender3Array.append(self.sender2Array[j])
                     }
-
                 }
 
                 self.results = self.other3Array.count
                 self.currResult = 0
                 self.fetchResults()
-
-            }else{
-
+            } else{
+                //
             }
         }
-
     }
 
     func fetchResults(){
+
         if currResult < results {
             var queryF = PFUser.query()
             queryF.whereKey("username", equalTo: self.other3Array[currResult])

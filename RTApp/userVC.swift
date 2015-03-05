@@ -34,7 +34,6 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         resultsTable.frame = CGRectMake(0, 0, width, height-64)
 
         userName = PFUser.currentUser().username
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +69,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.resultsPhoneArray.append(object["phone"] as String)
             if object["status"] == nil {
                 self.resultsStatusArray.append("" as String)
-            } else{
+            } else {
                 self.resultsStatusArray.append(object["status"] as String)
             }
 
@@ -93,7 +92,6 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "goToUserDetailVC") {
-
             var datas = segue.destinationViewController as userDetailVC
             datas.dataPassedName = otherName
             datas.dataPassedBio = bio
@@ -128,9 +126,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 cell.profileImage.image = image
             }
         })
-
         return cell
     }
-    
-    
+
 }

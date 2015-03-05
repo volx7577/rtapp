@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
         let currentInstallation:PFInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.saveInBackgroundWithBlock{
@@ -40,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 println("idk dawg, some shit went down.")
             }
         }
-
     }
 
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

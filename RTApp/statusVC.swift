@@ -23,7 +23,7 @@ class statusVC: UIViewController {
         var user = PFUser.currentUser()
         if user["status"] == nil {
             statusField.text = ""
-        } else{
+        } else {
             statusField.text = user["status"] as String
         }
 

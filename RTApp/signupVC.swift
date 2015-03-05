@@ -107,17 +107,20 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     @IBAction func signupButton_click(sender: AnyObject) {
+
         var user = PFUser()
+
         user.username = usernameField.text
         user.password = passwordField.text
         user.email = emailField.text
         user["bio"] = bioField.text
         user["dept"] = deptField.text
         user["phone"] = phoneNumberField.text
-        let imageData = UIImagePNGRepresentation(self.profileImage.image)
-        let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
         user["photo"] = imageFile
         user["status"] = ""
+
+        let imageData = UIImagePNGRepresentation(self.profileImage.image)
+        let imageFile = PFFile(name: "profilePhoto.png", data: imageData)
 
         user.signUpInBackgroundWithBlock(){
             (succeeded:Bool!, signUpError:NSError!) -> Void in
@@ -130,19 +133,17 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
                     (success: Bool!, error: NSError!) -> Void in
                     if error == nil{
                         println("saved current installation")
-                    }else{
+                    } else{
                         println("idk dawg, some shit went down.")
                     }
                 }
-
                 self.performSegueWithIdentifier("goToHomeVC2", sender: self)
                 println("signup")
-            }else{
+            } else{
                 println("can't signup")
             }
         }
     }
-
 
 
 ////////ADDRESS BOOK STUFFFFFFF

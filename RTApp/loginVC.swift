@@ -43,6 +43,7 @@ class loginVC: UIViewController {
 
 
     func textFieldDidEndEditing(textField: UITextField) {
+
         let width = view.frame.size.width
         let height = view.frame.size.height
 
@@ -64,6 +65,7 @@ class loginVC: UIViewController {
     }
 
     @IBAction func loginButton_click(sender: AnyObject) {
+
         PFUser.logInWithUsernameInBackground(usernameField.text, password: passwordField.text) {
             (user:PFUser!, logInError:NSError!) -> Void in
             if logInError == nil{

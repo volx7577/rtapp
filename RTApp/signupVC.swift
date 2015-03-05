@@ -27,6 +27,8 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         profileImage.center = CGPointMake(width/2, 160)
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds = true
         changeProfButton.center = CGPointMake(width-60, 160)
         usernameField.frame = CGRectMake(16, 260, width-32, 30)
         emailField.frame = CGRectMake(16, 300, width-32, 30)
@@ -78,7 +80,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let height = view.frame.size.height
 
         if (UIScreen.mainScreen().bounds.height == 568){//iphone 5 or 5s
-            println(textField)
+            println(textField.text)
             if(textField == self.bioField || textField == self.passwordField || textField == self.emailField || textField == self.deptField || textField == self.phoneNumberField){
                 UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
                     self.view.center = CGPointMake(width/2, (height/2)-190)

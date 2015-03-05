@@ -167,6 +167,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3tc-j2-a7s" id="GBy-kz-Df5"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.34092493832971826" blue="0.42956438084277859" alpha="1" colorSpace="calibratedRGB"/>
@@ -969,7 +972,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="caP-GO-Imz"/>
+        <segue reference="buH-bP-sRI"/>
         <segue reference="cep-uB-EpV"/>
         <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>

@@ -2,56 +2,57 @@
 //  photoFeedVC.swift
 //  RTApp
 //
-//  Created by Ben Barclay on 3/4/15.
+//  Created by Ben Barclay on 3/6/15.
 //  Copyright (c) 2015 Ben Barclay. All rights reserved.
 //
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+let reuseIdentifier = "photoCell"
 
-class photoFeedVC: UICollectionViewController,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-
-    @IBOutlet var photoCollection: UICollectionView!
+class photoFeedVC: UICollectionViewController {
 
     var resultsArray = [PFFile]()
-    private let reuseIdentifier = "photoCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 50, height: 50)
-        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        self.collectionView!.dataSource = self
-        self.collectionView!.delegate = self
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.backgroundColor = UIColor.whiteColor()
-        self.view.addSubview(collectionView!)
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
+        // Register cell classes
+        // self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.registerClass(photoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+
+        self.resultsArray.removeAll(keepCapacity: false)
+
+        var query = PFQuery(className: "Photo")
+        var objects = query.findObjects()
+
+        for object in objects{
+            self.resultsArray.append(object["photo"] as PFFile)
+        }
 
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool){
-        resultsArray.removeAll(keepCapacity: false)
+    /*
+    // MARK: - Navigation
 
-        var query = PFQuery(className: "Photo")
-        var objects = query.findObjects()
-
-        for object in objects{
-
-            self.resultsArray.append(object["photo"] as PFFile)
-        }
-
-        println(resultsArray.count)
-        self.collectionView?.reloadData()
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
+    */
+
+    // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
@@ -66,15 +67,21 @@ class photoFeedVC: UICollectionViewController,UICollectionViewDelegateFlowLayout
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
+    
+        // Configure the cell
 
-        resultsArray[indexPath.row].getDataInBackgroundWithBlock({
-            (imageData: NSData!, error:NSError!) -> Void in
+
+        cell.backgroundColor = UIColor.redColor()
+
+
+        resultsArray[indexPath.row].getDataInBackgroundWithBlock {
+            (imageData : NSData!, error : NSError!) -> Void in
 
             if error == nil{
                 let image = UIImage(data: imageData)
                 cell.imageView.image = image
             }
-        })
+        }
 
         return cell
     }

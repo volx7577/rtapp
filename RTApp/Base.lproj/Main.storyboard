@@ -192,55 +192,6 @@
             </objects>
             <point key="canvasLocation" x="1077" y="420"/>
         </scene>
-        <!--Photo FeedVC-->
-        <scene sceneID="0BS-Ph-twf">
-            <objects>
-                <collectionViewController id="o8v-At-J7s" customClass="photoFeedVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZZh-iC-CT9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c5L-ks-PRW">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="9I0-zN-IE3" customClass="photoCell" customModule="RTApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer.png" id="9op-vW-rJM">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="imageView" destination="9op-vW-rJM" id="ivJ-bg-zba"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="o8v-At-J7s" id="Kyh-HC-hdg"/>
-                            <outlet property="delegate" destination="o8v-At-J7s" id="lxh-Mw-sWG"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="TEb-E0-1p6"/>
-                    <connections>
-                        <outlet property="photoCollection" destination="ZZh-iC-CT9" id="R4y-Hx-fbs"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uZv-oG-pv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-262" y="1135"/>
-        </scene>
         <!--Edit Profile-->
         <scene sceneID="ECb-q7-Dko">
             <objects>
@@ -365,6 +316,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOl-x7-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-744" y="1919"/>
+        </scene>
+        <!--Upload PhotoVC-->
+        <scene sceneID="gJb-lk-hzL">
+            <objects>
+                <viewController id="VdG-Qf-rmu" customClass="uploadPhotoVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cue-D4-FFB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qoz-o3-kJ2">
+                                <rect key="frame" x="0.0" y="40" width="320" height="221"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FOo-oW-Itq">
+                                <rect key="frame" x="145" y="277" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findButton_click:" destination="VdG-Qf-rmu" eventType="touchUpInside" id="7kZ-Yw-f8g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IVC-1F-XP4">
+                                <rect key="frame" x="121" y="511" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButton_click:" destination="VdG-Qf-rmu" eventType="touchUpInside" id="VUF-eb-g2h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="findButton" destination="FOo-oW-Itq" id="RQ5-P3-iZl"/>
+                        <outlet property="uploadButton" destination="IVC-1F-XP4" id="au6-xV-4Im"/>
+                        <outlet property="uploadImage" destination="qoz-o3-kJ2" id="t8o-wL-CDN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7E-J2-bD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-310" y="1135"/>
+        </scene>
+        <!--Photo FeedVC-->
+        <scene sceneID="RtB-7d-lDN">
+            <objects>
+                <collectionViewController id="Mf2-Fv-y65" customClass="photoFeedVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QSD-fv-Syo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WCs-pd-D15">
+                            <size key="itemSize" width="297" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Mp6-6t-uf9" customClass="photoCell" customModule="RTApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="297" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5r1-8o-Haq">
+                                            <rect key="frame" x="0.0" y="0.0" width="297" height="250"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="imageView" destination="5r1-8o-Haq" id="nUL-vB-B79"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Mf2-Fv-y65" id="DAa-y8-p4F"/>
+                            <outlet property="delegate" destination="Mf2-Fv-y65" id="h3G-ix-Pfs"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dwB-NW-Oxf">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="MiH-yv-kkC">
+                            <connections>
+                                <segue destination="VdG-Qf-rmu" kind="modal" identifier="goToUploadPhotoVC" id="irH-vR-G2s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B8x-gl-aFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1135"/>
         </scene>
         <!--Home-->
         <scene sceneID="ltu-Ws-P4t">
@@ -497,7 +545,7 @@
                         <segue destination="5JZ-0E-FJu" kind="push" identifier="goToUserVC" id="Fpi-Hs-M87"/>
                         <segue destination="cmB-E1-Gia" kind="push" identifier="goToKegeratorVC" id="GxZ-ag-sI2"/>
                         <segue destination="0BF-lp-HH1" kind="modal" identifier="goToStatusVC" id="mcS-Sc-Pkq"/>
-                        <segue destination="o8v-At-J7s" kind="push" identifier="goToPhotoFeedVC" id="qWF-2s-NJo"/>
+                        <segue destination="Mf2-Fv-y65" kind="push" identifier="goToPhotoFeedVC" id="BCY-Wd-1Vh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-Ui-LLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -967,7 +1015,6 @@
     </scenes>
     <resources>
         <image name="3.png" width="1200" height="1154"/>
-        <image name="beer.png" width="1536" height="2294"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -976,7 +1023,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="buH-bP-sRI"/>
-        <segue reference="cep-uB-EpV"/>
+        <segue reference="qjL-Bf-scU"/>
         <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>
 </document>

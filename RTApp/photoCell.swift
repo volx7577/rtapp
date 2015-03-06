@@ -2,7 +2,7 @@
 //  photoCell.swift
 //  RTApp
 //
-//  Created by Ben Barclay on 3/4/15.
+//  Created by Ben Barclay on 3/6/15.
 //  Copyright (c) 2015 Ben Barclay. All rights reserved.
 //
 
@@ -12,8 +12,12 @@ class photoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
 
+
     override func awakeFromNib() {
-        imageView.center = CGPointMake(50, 50)
+        super.awakeFromNib()
+
+        imageView.image = UIImage(named: "3.png")
+
     }
 
 }

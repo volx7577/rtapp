@@ -13,13 +13,14 @@
 		5F1AB4501AA4FB10004844CA /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB44F1AA4FB10004844CA /* homeVC.swift */; };
 		5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4531AA503AE004844CA /* kegeratorVC.swift */; };
 		5F1AB4561AA515D7004844CA /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AB4551AA515D7004844CA /* profileVC.swift */; };
-		5F2C01011AA7C01700A88856 /* photoFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C01001AA7C01700A88856 /* photoFeedVC.swift */; };
-		5F2C01031AA7C2E600A88856 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C01021AA7C2E600A88856 /* photoCell.swift */; };
 		5F3983B41AA8D90700CD7356 /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3983B31AA8D90700CD7356 /* beer.png */; };
 		5F3983B61AA8D92300CD7356 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3983B51AA8D92300CD7356 /* 3.png */; };
 		5F3983C51AAA0A0F00CD7356 /* RTApp-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983C41AAA0A0F00CD7356 /* RTApp-Header.m */; };
 		5F3983C91AAA0CD000CD7356 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3983C71AAA0CD000CD7356 /* Parse.framework */; };
 		5F3983CA1AAA0CD000CD7356 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3983C81AAA0CD000CD7356 /* Bolts.framework */; };
+		5F3983CE1AAA13C000CD7356 /* photoFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */; };
+		5F3983D21AAA16B400CD7356 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983D11AAA16B400CD7356 /* photoCell.swift */; };
+		5F3983D41AAA241200CD7356 /* uploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */; };
 		5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CC3871AA63B7900913C01 /* beerVC.swift */; };
 		5F72227A1AA616F900741245 /* beerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7222791AA616F900741245 /* beerCell.swift */; };
 		5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */; };
@@ -64,14 +65,15 @@
 		5F1AB44F1AA4FB10004844CA /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		5F1AB4531AA503AE004844CA /* kegeratorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kegeratorVC.swift; sourceTree = "<group>"; };
 		5F1AB4551AA515D7004844CA /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
-		5F2C01001AA7C01700A88856 /* photoFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoFeedVC.swift; sourceTree = "<group>"; };
-		5F2C01021AA7C2E600A88856 /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
 		5F3983B31AA8D90700CD7356 /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer.png; path = "../../RTApp extras/beer.png"; sourceTree = "<group>"; };
 		5F3983B51AA8D92300CD7356 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = "../../RTApp extras/3.png"; sourceTree = "<group>"; };
 		5F3983C41AAA0A0F00CD7356 /* RTApp-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RTApp-Header.m"; sourceTree = "<group>"; };
 		5F3983C61AAA0A2500CD7356 /* RTApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5F3983C71AAA0CD000CD7356 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5F3983C81AAA0CD000CD7356 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoFeedVC.swift; sourceTree = "<group>"; };
+		5F3983D11AAA16B400CD7356 /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
+		5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uploadPhotoVC.swift; sourceTree = "<group>"; };
 		5F5CC3871AA63B7900913C01 /* beerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerVC.swift; sourceTree = "<group>"; };
 		5F7222791AA616F900741245 /* beerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerCell.swift; sourceTree = "<group>"; };
 		5F77074F1AA0CD4B0018AEBB /* RTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +174,9 @@
 				5F1AB4531AA503AE004844CA /* kegeratorVC.swift */,
 				5F5CC3871AA63B7900913C01 /* beerVC.swift */,
 				5F7222791AA616F900741245 /* beerCell.swift */,
-				5F2C01001AA7C01700A88856 /* photoFeedVC.swift */,
-				5F2C01021AA7C2E600A88856 /* photoCell.swift */,
+				5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */,
+				5F3983D11AAA16B400CD7356 /* photoCell.swift */,
+				5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */,
 				5F7707581AA0CD4B0018AEBB /* Main.storyboard */,
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
 				5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */,
@@ -338,9 +341,10 @@
 			files = (
 				5F77079B1AA0E0250018AEBB /* resultsCell.swift in Sources */,
 				5F72227A1AA616F900741245 /* beerCell.swift in Sources */,
-				5F2C01031AA7C2E600A88856 /* photoCell.swift in Sources */,
+				5F3983D21AAA16B400CD7356 /* photoCell.swift in Sources */,
 				5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */,
 				5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */,
+				5F3983D41AAA241200CD7356 /* uploadPhotoVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
 				5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */,
 				5F1AB44E1AA4EB20004844CA /* userDetailVC.swift in Sources */,
@@ -351,7 +355,7 @@
 				5F3983C51AAA0A0F00CD7356 /* RTApp-Header.m in Sources */,
 				5F1AB4501AA4FB10004844CA /* homeVC.swift in Sources */,
 				5F1AB4561AA515D7004844CA /* profileVC.swift in Sources */,
-				5F2C01011AA7C01700A88856 /* photoFeedVC.swift in Sources */,
+				5F3983CE1AAA13C000CD7356 /* photoFeedVC.swift in Sources */,
 				5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */,
 				5F7707751AA0CE920018AEBB /* signupVC.swift in Sources */,
 			);

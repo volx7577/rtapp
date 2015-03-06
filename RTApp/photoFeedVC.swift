@@ -10,18 +10,27 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
-class photoFeedVC: UICollectionViewController {
+class photoFeedVC: UICollectionViewController,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+
+    @IBOutlet var photoCollection: UICollectionView!
 
     var resultsArray = [PFFile]()
+    private let reuseIdentifier = "photoCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 50, height: 50)
+        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        self.collectionView!.dataSource = self
+        self.collectionView!.delegate = self
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(collectionView!)
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,27 +52,16 @@ class photoFeedVC: UICollectionViewController {
         println(resultsArray.count)
         self.collectionView?.reloadData()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
-        return resultsArray.count
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        return resultsArray.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

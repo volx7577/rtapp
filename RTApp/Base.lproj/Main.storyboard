@@ -233,6 +233,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="TEb-E0-1p6"/>
+                    <connections>
+                        <outlet property="photoCollection" destination="ZZh-iC-CT9" id="R4y-Hx-fbs"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZv-oG-pv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -61,6 +61,23 @@ class photoDetailVC: UIViewController {
 
     }
 
+    func refreshResults(){
+        if photoObject["comments"] != nil {
+            var commentsArray = photoObject["comments"] as NSArray as [String]
+            var s = ""
+            for comment in commentsArray {
+                s += ("- " + comment + "\n" )
+            }
+
+            commentLabel.text = s
+            commentLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            commentLabel.textAlignment = NSTextAlignment.Left
+            commentLabel.numberOfLines = 0
+            commentLabel.sizeToFit()
+        }
+        addCommentField.text = ""
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -82,6 +99,7 @@ class photoDetailVC: UIViewController {
                 }
             }
         }
+        refreshResults()
     }
 
 }

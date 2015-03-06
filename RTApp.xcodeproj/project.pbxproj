@@ -21,6 +21,7 @@
 		5F3983CE1AAA13C000CD7356 /* photoFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */; };
 		5F3983D21AAA16B400CD7356 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983D11AAA16B400CD7356 /* photoCell.swift */; };
 		5F3983D41AAA241200CD7356 /* uploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */; };
+		5F3983D61AAA293300CD7356 /* photoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3983D51AAA293300CD7356 /* photoDetailVC.swift */; };
 		5F5CC3881AA63B7900913C01 /* beerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CC3871AA63B7900913C01 /* beerVC.swift */; };
 		5F72227A1AA616F900741245 /* beerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7222791AA616F900741245 /* beerCell.swift */; };
 		5F7707551AA0CD4B0018AEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoFeedVC.swift; sourceTree = "<group>"; };
 		5F3983D11AAA16B400CD7356 /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
 		5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uploadPhotoVC.swift; sourceTree = "<group>"; };
+		5F3983D51AAA293300CD7356 /* photoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoDetailVC.swift; sourceTree = "<group>"; };
 		5F5CC3871AA63B7900913C01 /* beerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerVC.swift; sourceTree = "<group>"; };
 		5F7222791AA616F900741245 /* beerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beerCell.swift; sourceTree = "<group>"; };
 		5F77074F1AA0CD4B0018AEBB /* RTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 				5F3983CD1AAA13C000CD7356 /* photoFeedVC.swift */,
 				5F3983D11AAA16B400CD7356 /* photoCell.swift */,
 				5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */,
+				5F3983D51AAA293300CD7356 /* photoDetailVC.swift */,
 				5F7707581AA0CD4B0018AEBB /* Main.storyboard */,
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
 				5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */,
@@ -347,6 +350,7 @@
 				5F3983D41AAA241200CD7356 /* uploadPhotoVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
 				5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */,
+				5F3983D61AAA293300CD7356 /* photoDetailVC.swift in Sources */,
 				5F1AB44E1AA4EB20004844CA /* userDetailVC.swift in Sources */,
 				5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */,
 				5F1AB44A1AA4D550004844CA /* messagesVC.swift in Sources */,

@@ -10,9 +10,12 @@ import UIKit
 
 let reuseIdentifier = "photoCell"
 
+
 class photoFeedVC: UICollectionViewController {
 
     var resultsArray = [PFFile]()
+    var urlArray = [String]()
+    var urlArrayIndex = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class photoFeedVC: UICollectionViewController {
 
         // Register cell classes
         // self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        //self.collectionView!.registerClass(photoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // self.collectionView!.registerClass(photoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
 
         self.resultsArray.removeAll(keepCapacity: false)
@@ -32,8 +35,13 @@ class photoFeedVC: UICollectionViewController {
 
         for object in objects{
             self.resultsArray.append(object["photo"] as PFFile)
+            self.urlArray.append((object["photo"] as PFFile).url)
         }
 
+    }
+
+    override func viewWillAppear(animated: Bool) {
+       
     }
 
 
@@ -42,23 +50,10 @@ class photoFeedVC: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
         return 1
     }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
@@ -67,12 +62,8 @@ class photoFeedVC: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
-    
-        // Configure the cell
-
 
         cell.backgroundColor = UIColor.redColor()
-
 
         resultsArray[indexPath.row].getDataInBackgroundWithBlock {
             (imageData : NSData!, error : NSError!) -> Void in
@@ -102,7 +93,15 @@ class photoFeedVC: UICollectionViewController {
     }
     */
 
-    /*
+    override func collectionView(collectionView: UICollectionView,
+        didSelectItemAtIndexPath indexPath: NSIndexPath){
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
+            urlArrayIndex = indexPath.row
+
+            self.performSegueWithIdentifier("goToPhotoDetailVC", sender: self)
+
+    }
+
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
@@ -113,8 +112,15 @@ class photoFeedVC: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
     }
-    */
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "goToPhotoDetailVC") {
+            var datas = segue.destinationViewController as photoDetailVC
+
+            datas.dataPassedURL = urlArray[urlArrayIndex]
+        }
+    }
+
 
 }

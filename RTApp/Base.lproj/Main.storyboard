@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCf-vr-e7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="1919"/>
+            <point key="canvasLocation" x="14" y="2519"/>
         </scene>
         <!--StatusVC-->
         <scene sceneID="7WX-H6-JUT">
@@ -315,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOl-x7-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-744" y="1919"/>
+            <point key="canvasLocation" x="-468" y="2519"/>
         </scene>
         <!--Upload PhotoVC-->
         <scene sceneID="gJb-lk-hzL">
@@ -328,21 +328,39 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qoz-o3-kJ2">
                                 <rect key="frame" x="0.0" y="40" width="320" height="221"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.092499540909999997" green="1" blue="0.1972784829" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FOo-oW-Itq">
-                                <rect key="frame" x="145" y="277" width="30" height="30"/>
+                                <rect key="frame" x="142" y="277" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Find">
+                                    <color key="titleColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="findButton_click:" destination="VdG-Qf-rmu" eventType="touchUpInside" id="7kZ-Yw-f8g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IVC-1F-XP4">
-                                <rect key="frame" x="121" y="511" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IDW-86-z2U">
+                                <rect key="frame" x="235" y="511" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton_click:" destination="VdG-Qf-rmu" eventType="touchUpInside" id="SAO-Pg-lp0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IVC-1F-XP4">
+                                <rect key="frame" x="121" y="323" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Upload">
+                                    <color key="titleColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -350,9 +368,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="IDW-86-z2U" id="6hi-UU-gWe"/>
                         <outlet property="findButton" destination="FOo-oW-Itq" id="RQ5-P3-iZl"/>
                         <outlet property="uploadButton" destination="IVC-1F-XP4" id="au6-xV-4Im"/>
                         <outlet property="uploadImage" destination="qoz-o3-kJ2" id="t8o-wL-CDN"/>
@@ -360,9 +379,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7E-J2-bD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="1135"/>
+            <point key="canvasLocation" x="-468" y="1811"/>
         </scene>
-        <!--Photo FeedVC-->
+        <!--Photo DetailVC-->
+        <scene sceneID="HHk-oy-sN5">
+            <objects>
+                <viewController id="zZ4-W0-JWZ" customClass="photoDetailVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NLg-9g-dBT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zIY-OQ-xon">
+                                <rect key="frame" x="40" y="20" width="240" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write a comment" minimumFontSize="17" id="nIp-kw-0Mb">
+                                <rect key="frame" x="40" y="434" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Om-0j-AlS">
+                                <rect key="frame" x="40" y="472" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCommentButton_click:" destination="zZ4-W0-JWZ" eventType="touchUpInside" id="JM6-VT-eac"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IFi-MB-dAg">
+                                <rect key="frame" x="40" y="272" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Wd-zI-0p2">
+                                        <rect key="frame" x="0.0" y="13" width="240" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uwy-Y8-phf"/>
+                    <connections>
+                        <outlet property="addCommentButton" destination="6Om-0j-AlS" id="Uio-ff-nxX"/>
+                        <outlet property="addCommentField" destination="nIp-kw-0Mb" id="CnA-jx-DTc"/>
+                        <outlet property="commentLabel" destination="9Wd-zI-0p2" id="2D9-xW-iXB"/>
+                        <outlet property="commentsScroll" destination="IFi-MB-dAg" id="2Xn-zk-1ZO"/>
+                        <outlet property="imageView" destination="zIY-OQ-xon" id="hii-ei-RHy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLy-Kl-ll7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="1135"/>
+        </scene>
+        <!--RTOP FEED-->
         <scene sceneID="RtB-7d-lDN">
             <objects>
                 <collectionViewController id="Mf2-Fv-y65" customClass="photoFeedVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -401,7 +480,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="dwB-NW-Oxf">
+                    <navigationItem key="navigationItem" title="RTOP FEED" id="dwB-NW-Oxf">
                         <barButtonItem key="rightBarButtonItem" title="Upload" id="MiH-yv-kkC">
                             <connections>
                                 <segue destination="VdG-Qf-rmu" kind="modal" identifier="goToUploadPhotoVC" id="irH-vR-G2s"/>
@@ -409,6 +488,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zZ4-W0-JWZ" kind="push" identifier="goToPhotoDetailVC" id="qR1-fk-HbL"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8x-gl-aFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1022,8 +1104,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="buH-bP-sRI"/>
+        <segue reference="caP-GO-Imz"/>
         <segue reference="qjL-Bf-scU"/>
-        <segue reference="x8J-I8-rpm"/>
+        <segue reference="8nB-8S-PTf"/>
     </inferredMetricsTieBreakers>
 </document>

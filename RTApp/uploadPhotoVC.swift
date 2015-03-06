@@ -13,6 +13,7 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
     @IBOutlet weak var uploadImage: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var findButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
     @IBAction func uploadButton_click(sender: AnyObject) {
 
 
-        let imageData = UIImagePNGRepresentation(self.uploadImage.image)
+        if let imageData = UIImagePNGRepresentation(self.uploadImage.image){
         let imageFile = PFFile(name: "uploadedPhoto.png", data: imageData)
 
         var newImage = PFObject(className: "Photo")
@@ -38,10 +39,21 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
         newImage.saveInBackgroundWithBlock{
             (success: Bool, error: NSError!) -> Void in
             if (success) {
-                self.dismissViewControllerAnimated(true, completion: {})
+                newImage["name"] = newImage["photo"].url
+                newImage.saveInBackgroundWithBlock{
+                    (success: Bool, error: NSError!) -> Void in
+                    if (success) {
+                        newImage["name"] = newImage["photo"].url
+
+                        self.dismissViewControllerAnimated(true, completion: {})
+                    } else {
+                        println("failed to upload image name as url")
+                    }
+                }
             } else {
                 println("failed to upload image")
             }
+        }
         }
 
     }
@@ -56,6 +68,10 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
 
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         uploadImage.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func cancelButton_click(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

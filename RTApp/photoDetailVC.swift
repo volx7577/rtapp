@@ -25,7 +25,9 @@ class photoDetailVC: UIViewController {
         let width = view.frame.size.width
         let height = view.frame.size.height
 
-       // commentLabel.frame = CGRectMake(16, 240, width-32, 200)
+        commentLabel.frame = CGRectMake(16, 0, width-32, 400)
+        commentsScroll.scrollEnabled = true
+        commentsScroll.contentSize = CGSizeMake(width-32, 300)
 
         let predicate = NSPredicate(format: "name = %@", dataPassedURL)
 
@@ -43,18 +45,19 @@ class photoDetailVC: UIViewController {
             }
         }
 
-        var commentsArray = photoObject["comments"] as NSArray as [String]
+        if photoObject["comments"] != nil {
+            var commentsArray = photoObject["comments"] as NSArray as [String]
+            var s = ""
+            for comment in commentsArray {
+                s += ("- " + comment + "\n" )
+            }
 
-        var s = ""
-        for comment in commentsArray {
-            s += (comment + "\n" )
+            commentLabel.text = s
+            commentLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            commentLabel.textAlignment = NSTextAlignment.Left
+            commentLabel.numberOfLines = 0
+            commentLabel.sizeToFit()
         }
-
-        println(s)
-        commentLabel.text = s
-        commentLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        commentLabel.textAlignment = NSTextAlignment.Left
-
 
     }
 

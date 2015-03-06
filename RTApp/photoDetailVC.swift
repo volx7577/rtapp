@@ -62,6 +62,11 @@ class photoDetailVC: UIViewController {
     }
 
     func refreshResults(){
+        let width = view.frame.size.width
+        commentLabel.frame = CGRectMake(16, 0, width-32, 400)
+        commentsScroll.scrollEnabled = true
+        commentsScroll.contentSize = CGSizeMake(width-32, 300)
+
         if photoObject["comments"] != nil {
             var commentsArray = photoObject["comments"] as NSArray as [String]
             var s = ""
@@ -85,21 +90,27 @@ class photoDetailVC: UIViewController {
 
     @IBAction func addCommentButton_click(sender: AnyObject) {
         var commentText = addCommentField.text
+        var commentArray: [String] = []
         if commentText != "" {
-            var commentArray: [String] = photoObject["comments"] as [String]
-            commentArray.append(commentText)
 
+            if photoObject["comments"] != nil {
+                commentArray = photoObject["comments"] as [String]
+            }
+            commentArray.append(commentText)
+            println(commentArray)
             photoObject["comments"] = commentArray
             photoObject.saveInBackgroundWithBlock{
                 (success: Bool!, error: NSError!) -> Void in
                 if error == nil{
                     println("saved comment")
+                    self.refreshResults()
                 }else{
                     println("idk dawg, some other shit went down.")
                 }
             }
+
         }
-        refreshResults()
+
     }
 
 }

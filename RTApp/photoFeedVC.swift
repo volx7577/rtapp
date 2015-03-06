@@ -29,8 +29,11 @@ class photoFeedVC: UICollectionViewController {
 
 
         self.resultsArray.removeAll(keepCapacity: false)
+        self.urlArray.removeAll(keepCapacity: false)
+
 
         var query = PFQuery(className: "Photo")
+        query.addDescendingOrder("createdAt")
         var objects = query.findObjects()
 
         for object in objects{
@@ -41,7 +44,18 @@ class photoFeedVC: UICollectionViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-       
+        self.resultsArray.removeAll(keepCapacity: false)
+        self.urlArray.removeAll(keepCapacity: false)
+
+        var query = PFQuery(className: "Photo")
+        query.addDescendingOrder("createdAt")
+        var objects = query.findObjects()
+
+        for object in objects{
+            self.resultsArray.append(object["photo"] as PFFile)
+            self.urlArray.append((object["photo"] as PFFile).url)
+        }
+
     }
 
 

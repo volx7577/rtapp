@@ -324,6 +324,8 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                     var push:PFPush = PFPush()
                     push.setQuery(pushQuery)
                     push.setMessage("New Message")
+                    let data = ["type" : "message"]
+                    push.setData(data)
                     push.sendPush(nil)
                     println("push sent")
 

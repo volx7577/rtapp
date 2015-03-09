@@ -20,6 +20,7 @@ class resultsCell: UITableViewCell {
 
     var originalCenter = CGPoint()
     var orderOnDragRelease = false
+    var coffeeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,11 +36,25 @@ class resultsCell: UITableViewCell {
         var recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
+
+        coffeeLabel = createCueLabel()
+        coffeeLabel.text = "Invite for Coffee"
+        coffeeLabel.textAlignment = .Left
+
+        coffeeLabel.frame = CGRect(x: bounds.size.width + 30, y: 30, width: 140, height: bounds.size.height)
+         addSubview(coffeeLabel)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+
+    func createCueLabel() -> UILabel {
+        let label = UILabel(frame: CGRect.nullRect)
+        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.boldSystemFontOfSize(16.0)
+        return label
     }
 
     func handlePan(recognizer: UIPanGestureRecognizer) {
@@ -50,6 +65,9 @@ class resultsCell: UITableViewCell {
             let translation = recognizer.translationInView(self)
             center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
             orderOnDragRelease = frame.origin.x < -frame.size.width / 2.0
+            let cueAlpha = fabs(frame.origin.x) / (frame.size.width / 2.0)
+            coffeeLabel.alpha = cueAlpha
+            coffeeLabel.textColor = orderOnDragRelease ? UIColor.greenColor() : UIColor.whiteColor()
         }
         if recognizer.state == .Ended {
             let originalFrame = CGRect(x: 0, y: frame.origin.y,

@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
 
+        if let notificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+            let notificationType = notificationPayload["type"] as? String
+            println(notificationType)
+        } else {
+            println("no")
+        }
+
         return true
     }
 
@@ -47,8 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(error.localizedDescription)
     }
 
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         NSNotificationCenter.defaultCenter().postNotificationName("getMessage", object: nil)
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler handler: (UIBackgroundFetchResult) -> Void) {
+        handler(UIBackgroundFetchResult.NoData)
+        println(userInfo["aps"] as? String)
+        if let notificationType: String = userInfo["aps"] as? String {
+
+        }
+        println(userInfo)
     }
 
     func applicationWillResignActive(application: UIApplication) {

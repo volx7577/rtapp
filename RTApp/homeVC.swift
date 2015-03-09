@@ -67,7 +67,7 @@ class homeVC: UIViewController {
 
     @IBAction func logoutButton_click(sender: AnyObject) {
         PFUser.logOut()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.performSegueWithIdentifier("goToLoginVC", sender: self)
     }
 
     @IBAction func otherButton_click(sender: AnyObject) {

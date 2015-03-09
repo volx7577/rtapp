@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pLz-34-JDU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="22h-55-ek5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--InitVC-->
+        <scene sceneID="twk-Eb-gZP">
+            <objects>
+                <viewController id="IY3-Ti-hq8" customClass="initVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ea4-Pe-5fZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DRS-W3-r3t"/>
+                    <connections>
+                        <segue destination="Ytl-5s-qye" kind="push" identifier="goToLoginVC" id="qYa-Lw-fW6"/>
+                        <segue destination="BEM-qd-uRU" kind="push" identifier="goToHomeVC" id="JtD-ok-HO3"/>
+                        <segue destination="Kr6-JG-Pv8" kind="push" id="9un-fG-b27"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhe-5N-Ogf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="392"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="R2N-2l-P5R">
             <objects>
@@ -79,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyi-m2-5Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="420"/>
+            <point key="canvasLocation" x="380" y="392"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="KTY-9V-PSG">
@@ -190,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsD-2o-zV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="420"/>
+            <point key="canvasLocation" x="839" y="392"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="ECb-q7-Dko">
@@ -272,6 +292,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCf-vr-e7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="102" y="2627"/>
+        </scene>
+        <!--Coffee-->
+        <scene sceneID="Bdc-WK-AB5">
+            <objects>
+                <viewController id="Kr6-JG-Pv8" customClass="coffeeVC" customModule="RTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NK6-mj-RyG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Coffee" id="cJy-FK-gh4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aU-KU-3Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="1151"/>
         </scene>
         <!--StatusVC-->
         <scene sceneID="7WX-H6-JUT">
@@ -498,7 +533,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8x-gl-aFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="1169"/>
+            <point key="canvasLocation" x="-146" y="1123"/>
         </scene>
         <!--Home-->
         <scene sceneID="ltu-Ws-P4t">
@@ -570,17 +605,6 @@
                                     <action selector="voteForBeerButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="yFu-7W-wat"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ZK-0W-9U3">
-                                <rect key="frame" x="98" y="362" width="124" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Edit My Profile">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hnS-ao-NdB" kind="push" identifier="goToProfileVC" id="QFo-Wa-3bt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vHF-xY-9HK">
                                 <rect key="frame" x="99" y="414" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -602,6 +626,29 @@
                                 </state>
                                 <connections>
                                     <action selector="photoFeedButton_click:" destination="BEM-qd-uRU" eventType="touchUpInside" id="qO0-Iq-urb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5P0-HQ-MXm">
+                                <rect key="frame" x="101" y="299" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Coffee Order">
+                                    <color key="titleColor" red="1" green="0.13718396199999999" blue="0.2133885184" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Kr6-JG-Pv8" kind="push" identifier="goToCoffeeVC" id="Skl-fg-ncu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4ZK-0W-9U3">
+                                <rect key="frame" x="98" y="362" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Edit My Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hnS-ao-NdB" kind="push" identifier="goToProfileVC" id="QFo-Wa-3bt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -632,6 +679,7 @@
                         <segue destination="cmB-E1-Gia" kind="push" identifier="goToKegeratorVC" id="GxZ-ag-sI2"/>
                         <segue destination="0BF-lp-HH1" kind="modal" identifier="goToStatusVC" id="mcS-Sc-Pkq"/>
                         <segue destination="Mf2-Fv-y65" kind="push" identifier="goToPhotoFeedVC" id="BCY-Wd-1Vh"/>
+                        <segue destination="Ytl-5s-qye" kind="push" identifier="goToLoginVC" id="CPt-40-7VJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRv-Ui-LLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hJ-kJ-fFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="3453"/>
+            <point key="canvasLocation" x="1511" y="3453"/>
         </scene>
         <!--KegeratorVC-->
         <scene sceneID="fSM-ww-g0s">
@@ -786,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcC-Ge-2YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="2627"/>
+            <point key="canvasLocation" x="1511" y="2627"/>
         </scene>
         <!--MessagesVC-->
         <scene sceneID="lME-DY-2it">
@@ -858,7 +906,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0we-WF-cEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="2627"/>
+            <point key="canvasLocation" x="1964" y="2627"/>
         </scene>
         <!--Detail-->
         <scene sceneID="sYe-Wr-zdR">
@@ -1078,25 +1126,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEc-Tm-WPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="2627"/>
+            <point key="canvasLocation" x="2404" y="2627"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="WuO-2h-oZo">
+        <scene sceneID="gP4-dx-dgu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pLz-34-JDU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22h-55-ek5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WnJ-mx-Pz0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fpu-Xe-Fm8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ytl-5s-qye" kind="relationship" relationship="rootViewController" id="PGZ-lu-vet"/>
+                        <segue destination="IY3-Ti-hq8" kind="relationship" relationship="rootViewController" id="GHG-mb-Zxy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S3N-fq-zBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMT-Z5-pb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="420"/>
+            <point key="canvasLocation" x="-684" y="392"/>
         </scene>
     </scenes>
     <resources>
@@ -1108,8 +1156,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Uit-18-39r"/>
+        <segue reference="JtD-ok-HO3"/>
+        <segue reference="9un-fG-b27"/>
+        <segue reference="qYa-Lw-fW6"/>
         <segue reference="cep-uB-EpV"/>
-        <segue reference="8nB-8S-PTf"/>
+        <segue reference="x8J-I8-rpm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(error.localizedDescription)
     }
 
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         NSNotificationCenter.defaultCenter().postNotificationName("getMessage", object: nil)
     }
 

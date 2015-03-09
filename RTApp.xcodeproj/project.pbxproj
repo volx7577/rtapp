@@ -47,6 +47,8 @@
 		5F77079D1AA0F4C80018AEBB /* conversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77079C1AA0F4C80018AEBB /* conversationVC.swift */; };
 		5F859C4A1AA7A4EF00C6B1C3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F859C491AA7A4EF00C6B1C3 /* AddressBook.framework */; };
 		5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F859C4B1AA7B23200C6B1C3 /* statusVC.swift */; };
+		5FB268AD1AAE0E5F009EB419 /* coffeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB268AC1AAE0E5F009EB419 /* coffeeVC.swift */; };
+		5FB268AF1AAE2217009EB419 /* initVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB268AE1AAE2217009EB419 /* initVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		5F77079C1AA0F4C80018AEBB /* conversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conversationVC.swift; sourceTree = "<group>"; };
 		5F859C491AA7A4EF00C6B1C3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5F859C4B1AA7B23200C6B1C3 /* statusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statusVC.swift; sourceTree = "<group>"; };
+		5FB268AC1AAE0E5F009EB419 /* coffeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coffeeVC.swift; sourceTree = "<group>"; };
+		5FB268AE1AAE2217009EB419 /* initVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = initVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5F7707541AA0CD4B0018AEBB /* AppDelegate.swift */,
+				5FB268AE1AAE2217009EB419 /* initVC.swift */,
 				5F7707741AA0CE920018AEBB /* signupVC.swift */,
 				5F7707561AA0CD4B0018AEBB /* loginVC.swift */,
 				5F1AB44F1AA4FB10004844CA /* homeVC.swift */,
@@ -180,6 +185,7 @@
 				5F3983D11AAA16B400CD7356 /* photoCell.swift */,
 				5F3983D31AAA241200CD7356 /* uploadPhotoVC.swift */,
 				5F3983D51AAA293300CD7356 /* photoDetailVC.swift */,
+				5FB268AC1AAE0E5F009EB419 /* coffeeVC.swift */,
 				5F7707581AA0CD4B0018AEBB /* Main.storyboard */,
 				5F77075B1AA0CD4B0018AEBB /* Images.xcassets */,
 				5F77075D1AA0CD4B0018AEBB /* LaunchScreen.xib */,
@@ -350,6 +356,8 @@
 				5F3983D41AAA241200CD7356 /* uploadPhotoVC.swift in Sources */,
 				5F7707571AA0CD4B0018AEBB /* loginVC.swift in Sources */,
 				5F859C4C1AA7B23200C6B1C3 /* statusVC.swift in Sources */,
+				5FB268AF1AAE2217009EB419 /* initVC.swift in Sources */,
+				5FB268AD1AAE0E5F009EB419 /* coffeeVC.swift in Sources */,
 				5F3983D61AAA293300CD7356 /* photoDetailVC.swift in Sources */,
 				5F1AB44E1AA4EB20004844CA /* userDetailVC.swift in Sources */,
 				5F1AB4541AA503AE004844CA /* kegeratorVC.swift in Sources */,

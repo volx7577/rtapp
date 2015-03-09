@@ -32,9 +32,9 @@ class homeVC: UIViewController {
         testDeptButton.center = CGPointMake(width/3-60, 150)
         devDeptButton.center = CGPointMake((2*width)/3-60,150)
         otherDeptButton.center = CGPointMake(width-60, 150)
-        statusButton.center = CGPointMake(width/2, height-110)
-        beerButton.center = CGPointMake(width/2, height-70)
-        photoFeedButton.center = CGPointMake(width/2,height-30)
+        statusButton.center = CGPointMake(width/2, height-140)
+        beerButton.center = CGPointMake(width/2-90, height-100)
+        photoFeedButton.center = CGPointMake(width-90,height-100)
     }
 
     override func viewDidAppear(animated: Bool) {

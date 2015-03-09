@@ -30,7 +30,6 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         commentsScroll.contentSize = CGSizeMake(width-32, 300)
 
         let predicate = NSPredicate(format: "name = %@", dataPassedURL)
-
         var query = PFQuery(className: "Photo", predicate: predicate)
         var objects = query.findObjects()
 
@@ -56,9 +55,9 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
             commentLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
             commentLabel.textAlignment = NSTextAlignment.Left
             commentLabel.numberOfLines = 0
+            commentLabel.font = UIFont(name: commentLabel.font.fontName, size: 12)
             commentLabel.sizeToFit()
         }
-
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -76,8 +75,8 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
                     }, completion: {
                         (finished:Bool) in
                         //
-                })
-        }
+                    })
+                }
         }
     }
 
@@ -145,13 +144,11 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
                 if error == nil{
                     println("saved comment")
                     self.refreshResults()
-                }else{
+                } else{
                     println("idk dawg, some other shit went down.")
                 }
             }
-
         }
-
     }
 
 }

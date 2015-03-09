@@ -27,7 +27,6 @@ class photoFeedVC: UICollectionViewController {
         // self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         // self.collectionView!.registerClass(photoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-
         self.resultsArray.removeAll(keepCapacity: false)
         self.urlArray.removeAll(keepCapacity: false)
 
@@ -40,24 +39,21 @@ class photoFeedVC: UICollectionViewController {
             self.resultsArray.append(object["photo"] as PFFile)
             self.urlArray.append((object["photo"] as PFFile).url)
         }
-
     }
 
     override func viewWillAppear(animated: Bool) {
+
         self.resultsArray.removeAll(keepCapacity: false)
         self.urlArray.removeAll(keepCapacity: false)
 
         var query = PFQuery(className: "Photo")
         query.addDescendingOrder("createdAt")
         var objects = query.findObjects()
-
         for object in objects{
             self.resultsArray.append(object["photo"] as PFFile)
             self.urlArray.append((object["photo"] as PFFile).url)
         }
-
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,29 +61,22 @@ class photoFeedVC: UICollectionViewController {
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
         return 1
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
         return resultsArray.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
-
-        cell.backgroundColor = UIColor.redColor()
-
         resultsArray[indexPath.row].getDataInBackgroundWithBlock {
             (imageData : NSData!, error : NSError!) -> Void in
-
             if error == nil{
                 let image = UIImage(data: imageData)
                 cell.imageView.image = image
             }
         }
-
         return cell
     }
 
@@ -135,6 +124,5 @@ class photoFeedVC: UICollectionViewController {
             datas.dataPassedURL = urlArray[urlArrayIndex]
         }
     }
-
 
 }

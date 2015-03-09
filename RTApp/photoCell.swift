@@ -12,12 +12,10 @@ class photoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
 
         imageView.image = UIImage(named: "3.png")
-
     }
 
 }

@@ -17,45 +17,40 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @IBAction func uploadButton_click(sender: AnyObject) {
 
-
         if let imageData = UIImagePNGRepresentation(self.uploadImage.image){
-        let imageFile = PFFile(name: "uploadedPhoto.png", data: imageData)
+            let imageFile = PFFile(name: "uploadedPhoto.png", data: imageData)
 
-        var newImage = PFObject(className: "Photo")
-        newImage["photo"] = imageFile
+            var newImage = PFObject(className: "Photo")
+            newImage["photo"] = imageFile
 
-        newImage.saveInBackgroundWithBlock{
-            (success: Bool, error: NSError!) -> Void in
-            if (success) {
-                newImage["name"] = newImage["photo"].url
-                newImage.saveInBackgroundWithBlock{
-                    (success: Bool, error: NSError!) -> Void in
-                    if (success) {
-                        newImage["name"] = newImage["photo"].url
-
-                        self.dismissViewControllerAnimated(true, completion: {})
-                    } else {
-                        println("failed to upload image name as url")
+            newImage.saveInBackgroundWithBlock{
+                (success: Bool, error: NSError!) -> Void in
+                if (success) {
+                    newImage["name"] = newImage["photo"].url
+                    newImage.saveInBackgroundWithBlock{
+                        (success: Bool, error: NSError!) -> Void in
+                        if (success) {
+                            newImage["name"] = newImage["photo"].url
+                            
+                            self.dismissViewControllerAnimated(true, completion: {})
+                        } else {
+                            println("failed to upload image name as url")
+                        }
                     }
+                } else {
+                    println("failed to upload image")
                 }
-            } else {
-                println("failed to upload image")
             }
         }
-        }
-
     }
 
     @IBAction func findButton_click(sender: AnyObject) {

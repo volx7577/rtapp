@@ -34,9 +34,9 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         var objects = query.findObjects()
 
         for object in objects{
-            self.beerNameArray.append(object["Name"] as String)
-            self.beerDescArray.append(object["Description"] as String)
-            self.beerVotesArray.append(object["Votes"] as Int)
+            self.beerNameArray.append(object["Name"] as! String)
+            self.beerDescArray.append(object["Description"] as! String)
+            self.beerVotesArray.append(object["Votes"] as! Int)
         }
 
         beerOneButton.setTitle(beerNameArray[0], forState: UIControlState.Normal)
@@ -52,7 +52,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToBeerVC") {
-            var datas = segue.destinationViewController as beerVC
+            var datas = segue.destinationViewController as! beerVC
             datas.index = indexForBeerVC
         }
     }
@@ -66,7 +66,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:beerCell = tableView.dequeueReusableCellWithIdentifier("Cell") as beerCell
+        var cell:beerCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! beerCell
 
         cell.votesLabel.text = String(self.beerVotesArray[indexPath.row])
         cell.votesButton.setTitle(self.beerNameArray[indexPath.row], forState: UIControlState.Normal)
@@ -76,7 +76,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as beerCell
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! beerCell
         var thisBeer = cell.votesButton.titleForState(.Normal)
         let bPredicate = NSPredicate(format: "Name = '"+thisBeer!+"'")
 
@@ -90,7 +90,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     object.incrementKey("Votes")
 
                     object.saveInBackgroundWithBlock{
-                        (success:Bool!,error:NSError!) -> Void in
+                        (success:Bool,error:NSError!) -> Void in
                         if success == true{
                             println("voted")
                         }
@@ -108,7 +108,7 @@ class kegeratorVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         var query = PFQuery(className: "Beer")
         var objects = query.findObjects()
         for object in objects{
-            self.beerVotesArray.append(object["Votes"] as Int)
+            self.beerVotesArray.append(object["Votes"] as! Int)
         }
 
         self.beerTable.reloadData()

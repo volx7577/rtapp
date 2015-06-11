@@ -99,7 +99,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     func keyboardWasShown(notification: NSNotification){
 
         let dict:NSDictionary = notification.userInfo!
-        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue
+        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let rect:CGRect = s.CGRectValue()
 
         UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
@@ -117,7 +117,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     func keyboardWillHide(notification: NSNotification){
 
         let dict:NSDictionary = notification.userInfo!
-        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue
+        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let rect:CGRect = s.CGRectValue()
 
         UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
@@ -141,7 +141,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         self.resultsImageFiles.removeAll(keepCapacity: false)
 
         for object in objects{
-            self.resultsImageFiles.append(object["photo"] as PFFile)
+            self.resultsImageFiles.append(object["photo"] as! PFFile)
             self.resultsImageFiles[0].getDataInBackgroundWithBlock{
                 (imageData:NSData!, error:NSError!) -> Void in
 
@@ -156,7 +156,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
 
                     for object in objects2{
 
-                        self.resultsImageFiles2.append(object["photo"] as PFFile)
+                        self.resultsImageFiles2.append(object["photo"] as! PFFile)
 
                         self.resultsImageFiles2[0].getDataInBackgroundWithBlock{
                             (imageData:NSData!, error:NSError!) -> Void in
@@ -206,8 +206,8 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
 
             if error == nil{
                 for object in objects{
-                    self.senderArray.append(object.objectForKey("sender") as String)
-                    self.messageArray.append(object.objectForKey("message") as String)
+                    self.senderArray.append(object.objectForKey("sender") as! String)
+                    self.messageArray.append(object.objectForKey("message") as! String)
                 }
                 for subView in self.resultsScrollView.subviews{
                     subView.removeFromSuperview()
@@ -311,7 +311,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
             messageDBTable["other"] = otherName
             messageDBTable["message"] = self.messageTextView.text
             messageDBTable.saveInBackgroundWithBlock{
-                (success:Bool!,error:NSError!) -> Void in
+                (success:Bool,error:NSError!) -> Void in
 
                 if success == true{
 

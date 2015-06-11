@@ -90,9 +90,9 @@ class resultsCell: UITableViewCell {
 
         var push:PFPush = PFPush()
         push.setQuery(pushQuery)
-        let data = ["type" : "coffee"]
+        let data = ["type" : "coffee",
+                    "alert" : "You've Been Invited To A Coffee Order"]
         push.setData(data)
-        push.setMessage("You've Been Invited To A Coffee Order")
         push.sendPush(nil)
         println("push sent")
 

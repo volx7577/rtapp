@@ -36,8 +36,8 @@ class photoFeedVC: UICollectionViewController {
         var objects = query.findObjects()
 
         for object in objects{
-            self.resultsArray.append(object["photo"] as PFFile)
-            self.urlArray.append((object["photo"] as PFFile).url)
+            self.resultsArray.append(object["photo"] as! PFFile)
+            self.urlArray.append((object["photo"] as! PFFile).url)
         }
     }
 
@@ -50,8 +50,8 @@ class photoFeedVC: UICollectionViewController {
         query.addDescendingOrder("createdAt")
         var objects = query.findObjects()
         for object in objects{
-            self.resultsArray.append(object["photo"] as PFFile)
-            self.urlArray.append((object["photo"] as PFFile).url)
+            self.resultsArray.append(object["photo"] as! PFFile)
+            self.urlArray.append((object["photo"] as! PFFile).url)
         }
     }
 
@@ -69,7 +69,7 @@ class photoFeedVC: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! photoCell
         resultsArray[indexPath.row].getDataInBackgroundWithBlock {
             (imageData : NSData!, error : NSError!) -> Void in
             if error == nil{
@@ -98,7 +98,7 @@ class photoFeedVC: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView,
         didSelectItemAtIndexPath indexPath: NSIndexPath){
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as photoCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! photoCell
             urlArrayIndex = indexPath.row
 
             self.performSegueWithIdentifier("goToPhotoDetailVC", sender: self)
@@ -119,7 +119,7 @@ class photoFeedVC: UICollectionViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "goToPhotoDetailVC") {
-            var datas = segue.destinationViewController as photoDetailVC
+            var datas = segue.destinationViewController as! photoDetailVC
 
             datas.dataPassedURL = urlArray[urlArrayIndex]
         }

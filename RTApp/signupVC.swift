@@ -55,7 +55,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         self.presentViewController(image, animated: true, completion: nil)
     }
 
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         profileImage.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -70,7 +70,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         return true
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
@@ -125,14 +125,14 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         user["photo"] = imageFile
 
         user.signUpInBackgroundWithBlock(){
-            (succeeded:Bool!, signUpError:NSError!) -> Void in
+            (succeeded:Bool, signUpError:NSError!) -> Void in
 
             if signUpError == nil{
 
                 var installation:PFInstallation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveInBackgroundWithBlock{
-                    (success: Bool!, error: NSError!) -> Void in
+                    (success: Bool, error: NSError!) -> Void in
                     if error == nil{
                         println("saved current installation")
                     } else{
@@ -191,7 +191,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
 
         for record:ABRecordRef in contactList {
             var contactPerson: ABRecordRef = record
-            var contactName: String = ABRecordCopyCompositeName(contactPerson).takeRetainedValue() as NSString
+            var contactName: String = ABRecordCopyCompositeName(contactPerson).takeRetainedValue() as NSString as String
             println ("contactName \(contactName)")
         }
     }

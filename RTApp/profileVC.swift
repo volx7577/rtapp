@@ -34,7 +34,7 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
         var user = PFUser.currentUser()
         usernameField.text = user.username
-        bioField.text = user["bio"] as String
+        bioField.text = user["bio"] as! String
 
         user["photo"].getDataInBackgroundWithBlock({
             (imageData: NSData!, error:NSError!) -> Void in
@@ -51,7 +51,7 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         // Dispose of any resources that can be recreated.
     }
 
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         profileImage.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -72,7 +72,7 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         return true
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
@@ -109,7 +109,7 @@ class profileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         user["photo"] = imageFile
 
         user.saveInBackgroundWithBlock{
-            (success: Bool!, error: NSError!) -> Void in
+            (success: Bool, error: NSError!) -> Void in
             if error == nil{
                 println("saved current installation")
             }else{

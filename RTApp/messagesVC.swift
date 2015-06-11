@@ -65,9 +65,9 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
             if error == nil {
                 for object in objects {
-                    self.senderArray.append(object.objectForKey("sender") as String)
-                    self.otherArray.append(object.objectForKey("other") as String)
-                    self.messageArray.append(object.objectForKey("message") as String)
+                    self.senderArray.append(object.objectForKey("sender") as! String)
+                    self.otherArray.append(object.objectForKey("other") as! String)
+                    self.messageArray.append(object.objectForKey("message") as! String)
                 }
 
                 for var i = 0; i <= self.senderArray.count - 1; i++ {
@@ -115,8 +115,8 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             var objects = queryF.findObjects()
 
             for object in objects {
-                self.resultsNameArray.append(object.objectForKey("email") as String)
-                self.resultsImageFiles.append(object.objectForKey("photo") as PFFile)
+                self.resultsNameArray.append(object.objectForKey("email") as! String)
+                self.resultsImageFiles.append(object.objectForKey("photo") as! PFFile)
 
                 self.currResult = self.currResult + 1
                 self.fetchResults()
@@ -141,7 +141,7 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:messageCell = tableView.dequeueReusableCellWithIdentifier("Cell") as messageCell
+        var cell:messageCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! messageCell
 
         cell.nameLabel.text = self.resultsNameArray[indexPath.row]
         cell.messageLabel.text = self.message3Array[indexPath.row]
@@ -160,7 +160,7 @@ class messagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as messageCell
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! messageCell
 
         otherName = cell.usernameLabel.text!
         otherProfileName = cell.nameLabel.text!

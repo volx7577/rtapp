@@ -10,17 +10,18 @@ import UIKit
 
 class coffeeVC: UIViewController {
 
+    @IBOutlet weak var coffeeTable: UITableView!
+    @IBOutlet weak var coffeeCell: UITableViewCell!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       // coffeeTable.frame = CGRectMake(<#x: CGFloat#>, <#y: CGFloat#>, <#width: CGFloat#>, <#height: CGFloat#>)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
 }

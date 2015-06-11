@@ -64,13 +64,13 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         for object in objects{
             self.resultsUsernameArray.append(object.username)
             self.resultsProfileNameArray.append(object.email)
-            self.resultsImageFiles.append(object["photo"] as PFFile)
-            self.resultsBioArrays.append(object["bio"] as String)
-            self.resultsPhoneArray.append(object["phone"] as String)
+            self.resultsImageFiles.append(object["photo"] as! PFFile)
+            self.resultsBioArrays.append(object["bio"] as! String)
+            self.resultsPhoneArray.append(object["phone"] as! String)
             if object["status"] == nil {
                 self.resultsStatusArray.append("" as String)
             } else {
-                self.resultsStatusArray.append(object["status"] as String)
+                self.resultsStatusArray.append(object["status"] as! String)
             }
 
             self.resultsTable.reloadData()
@@ -78,7 +78,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as resultsCell
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! resultsCell
 
         otherName = cell.usernameLabel.text!
         otherProfileName = cell.profileNameLabel.text!
@@ -92,7 +92,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "goToUserDetailVC") {
-            var datas = segue.destinationViewController as userDetailVC
+            var datas = segue.destinationViewController as! userDetailVC
             datas.dataPassedName = otherName
             datas.dataPassedBio = bio
             datas.dataPassedPhone = phone
@@ -110,7 +110,7 @@ class userVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var cell:resultsCell = tableView.dequeueReusableCellWithIdentifier("Cell") as resultsCell
+        var cell:resultsCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! resultsCell
 
         cell.usernameLabel.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLabel.text = self.resultsProfileNameArray[indexPath.row]

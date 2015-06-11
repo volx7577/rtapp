@@ -61,7 +61,7 @@ class uploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
         self.presentViewController(image, animated: true, completion: nil)
     }
 
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         uploadImage.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
     }

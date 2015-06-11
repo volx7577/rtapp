@@ -24,7 +24,7 @@ class statusVC: UIViewController {
         if user["status"] == nil {
             statusField.text = ""
         } else {
-            statusField.text = user["status"] as String
+            statusField.text = user["status"] as! String
         }
 
         //TODO:set elements positions
@@ -42,7 +42,7 @@ class statusVC: UIViewController {
             var user = PFUser.currentUser()
             user["status"] = statusField.text
             user.saveInBackgroundWithBlock{
-                (success: Bool!, error: NSError!) -> Void in
+                (success: Bool, error: NSError!) -> Void in
                 if error == nil{
                     println("saved current installation")
                 }else{

@@ -37,7 +37,7 @@ class loginVC: UIViewController {
         return true
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
@@ -74,7 +74,7 @@ class loginVC: UIViewController {
                 var installation:PFInstallation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveInBackgroundWithBlock{
-                    (success: Bool!, error: NSError!) -> Void in
+                    (success: Bool, error: NSError!) -> Void in
                     if error == nil{
                         println("saved current installation")
                     }else{

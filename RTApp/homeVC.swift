@@ -48,7 +48,7 @@ class homeVC: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "goToUserVC") {
-            var datas = segue.destinationViewController as userVC
+            var datas = segue.destinationViewController as! userVC
             datas.deptWasSelected = deptSelected
         }
     }

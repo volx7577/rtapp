@@ -42,9 +42,9 @@ class beerVC: UIViewController {
         var objects = query.findObjects()
 
         for object in objects{
-            self.beerNameArray.append(object["Name"] as String)
-            self.beerDescArray.append(object["Description"] as String)
-            self.resultsImageFiles.append(object.objectForKey("Photo") as PFFile)
+            self.beerNameArray.append(object["Name"] as! String)
+            self.beerDescArray.append(object["Description"] as! String)
+            self.resultsImageFiles.append(object.objectForKey("Photo") as! PFFile)
         }
 
         nameLabel.text = beerNameArray[index]

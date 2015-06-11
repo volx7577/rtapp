@@ -33,8 +33,8 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         var query = PFQuery(className: "Photo", predicate: predicate)
         var objects = query.findObjects()
 
-        photoObject = objects[0] as PFObject
-        var image = photoObject["photo"] as PFFile
+        photoObject = objects[0] as! PFObject
+        var image = photoObject["photo"] as! PFFile
         image.getDataInBackgroundWithBlock {
             (imageData : NSData!, error : NSError!) -> Void in
 
@@ -45,7 +45,7 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         }
 
         if photoObject["comments"] != nil {
-            var commentsArray = photoObject["comments"] as NSArray as [String]
+            var commentsArray = photoObject["comments"] as! NSArray as! [String]
             var s = ""
             for comment in commentsArray {
                 s += ("- " + comment + "\n" )
@@ -60,7 +60,7 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         }
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
@@ -108,7 +108,7 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         commentsScroll.contentSize = CGSizeMake(width-32, 300)
 
         if photoObject["comments"] != nil {
-            var commentsArray = photoObject["comments"] as NSArray as [String]
+            var commentsArray = photoObject["comments"] as! NSArray as! [String]
             var s = ""
             for comment in commentsArray {
                 s += ("- " + comment + "\n" )
@@ -134,13 +134,13 @@ class photoDetailVC: UIViewController, UITextFieldDelegate, UINavigationControll
         if commentText != "" {
 
             if photoObject["comments"] != nil {
-                commentArray = photoObject["comments"] as [String]
+                commentArray = photoObject["comments"] as! [String]
             }
             commentArray.append(commentText)
             println(commentArray)
             photoObject["comments"] = commentArray
             photoObject.saveInBackgroundWithBlock{
-                (success: Bool!, error: NSError!) -> Void in
+                (success: Bool, error: NSError!) -> Void in
                 if error == nil{
                     println("saved comment")
                     self.refreshResults()
